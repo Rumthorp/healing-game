@@ -6,8 +6,8 @@
   "author": "Rumthorp <mattmerwinjennings@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "SET NODE_ENV=development && webpack-dev-server --config config/webpack.dev.js --open",
-    "build": "SET NODE_ENV=production && webpack --config config/webpack.prod.js"
+    "dev": "set NODE_ENV=development && webpack-dev-server --config config/webpack.dev.js --open",
+    "build": "set NODE_ENV=production && webpack --config config/webpack.prod.js"
   },
   "devDependencies": {
     "@babel/core": "^7.11.0",
@@ -27,11 +27,11 @@
     "webpack-merge": "^5.0.9"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.4.0",
+    "pixi.js": "^5.3.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
-    "react-router-dom": "^5.2.0",
-    "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8"
+    "react-router-dom": "^5.2.0"
   }
 }
