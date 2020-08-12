@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from "react-router-dom";
 
-import './game/main';
 import store from './redux/configureStore';
-import { addTest, subtractTest } from './redux/features/testSlice';
+import './game/main';
 import './styles/main.scss';
 
 const App = () => {
