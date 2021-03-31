@@ -3,14 +3,17 @@ import * as PIXI from 'pixi.js';
 import { removeHealth, addHealth } from '../../redux/slices/blobStatsSlice';
 import { addUpdate } from '../../redux/slices/updateSlice';
 import store from '../../redux/configureStore';
+import config from '../../config/main';
 
+const { numberOfBlobs } = config;
 const blobStatsState = store.getState().blobStats;
 const allBlobsContainer = new PIXI.Container();
 const fullHeartTexture = PIXI.Texture.from('../../../assets/full-heart.png');
 const emptyHeartTexture = PIXI.Texture.from('../../../assets/empty-heart.png');
 const borderTexture = PIXI.Texture.from('../../../assets/grey-box.png');
 
-const onClick = (blobIndex) => {
+const onClick = (blobIndex, one, two) => {
+  console.log(blobIndex, one, two)
   let blobStatsState = store.getState().blobStats[blobIndex];
   if (blobStatsState.currentHealth < blobStatsState.maxHealth) {
     store.dispatch(addHealth(blobIndex));
@@ -18,7 +21,7 @@ const onClick = (blobIndex) => {
   }
 };
 
-for (let i = 0; i < 16; i++) {
+for (let i = 0; i < numberOfBlobs; i++) {
   const blobContainer = new PIXI.Container();
   blobContainer.name = i;
   const heartContainer = new PIXI.Container();

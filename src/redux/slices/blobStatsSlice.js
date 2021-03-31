@@ -4,7 +4,7 @@ const generateInitialState = () => {
   const initialState = [];
   for(let i = 0; i < 16; i++) {
     initialState.push({
-      maxHealth: 5,
+      maxHealth: 8,
       currentHealth: 3
     });
   }

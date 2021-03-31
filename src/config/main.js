@@ -1,3 +1,3 @@
-export {
-  numberOfBlobs: 16
+export default {
+  numberOfBlobs: 14
 };
