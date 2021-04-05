@@ -1,9 +1,9 @@
 import * as PIXI from 'pixi.js';
 
-import { removeHealth, addHealth } from '../../redux/slices/blobStatsSlice';
-import { addUpdate } from '../../redux/slices/updateSlice';
+import { removeHealth, addHealth } from '../blobStatsSlice';
+import { addUpdate } from '../updateSlice';
 import store from '../../redux/configureStore';
-import config from '../../config/main';
+import config from '../config/main';
 
 const { numberOfBlobs } = config;
 const blobStatsState = store.getState().blobStats;
@@ -41,7 +41,7 @@ for (let i = 0; i < numberOfBlobs; i++) {
   blobContainer.y = (Math.floor(i / 4) * 180) + 2.5;
   blobContainer.interactive = true;
   blobContainer.index = i;
-  blobContainer.on('pointerdown', () => onClick(blobContainer.index));
+  blobContainer.on('pointerdown', (one, two) => onClick(blobContainer.index, one, two));
   allBlobsContainer.addChild(blobContainer);
 }
 

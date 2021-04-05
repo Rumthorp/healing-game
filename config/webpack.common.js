@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/app.jsx',
+  entry: './src/app.js',
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../src/template.html')
@@ -25,11 +25,6 @@ module.exports = {
             }
           }
         ]
-      },
-      {
-        test: /\.js|jsx$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
       },
       {
         test: /\.scss$/,

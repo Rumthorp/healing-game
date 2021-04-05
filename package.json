@@ -10,10 +10,6 @@
     "build": "set NODE_ENV=production && webpack --config config/webpack.prod.js"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.0",
-    "@babel/preset-env": "^7.11.0",
-    "@babel/preset-react": "^7.10.4",
-    "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^4.2.0",
     "file-loader": "^6.0.0",
@@ -28,10 +24,6 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",
-    "pixi.js": "^5.3.3",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-redux": "^7.2.1",
-    "react-router-dom": "^5.2.0"
+    "pixi.js": "^5.3.3"
   }
 }
