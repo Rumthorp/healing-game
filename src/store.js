@@ -1,8 +1,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
 import sceneManagerSlice from './scenes/sceneManagerSlice';
-import blobStatsSlice from './blobStatsSlice';
-import updateSlice from './updateSlice';
+import gooGridSlice from './scenes/battle/gooGrid/gooGridSlice';
 
 // export const loadState = () => {
 //   try {
@@ -29,8 +28,7 @@ import updateSlice from './updateSlice';
 
 const reducer = combineReducers({
   sceneManager: sceneManagerSlice,
-  blobStats: blobStatsSlice,
-  update: updateSlice
+  gooGrid: gooGridSlice
 });
 
 const store = configureStore({

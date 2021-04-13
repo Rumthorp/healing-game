@@ -1,23 +1,29 @@
 import * as PIXI from 'pixi.js';
 
-import { changeScene } from '../sceneManagerSlice';
-import { generateNewScene } from '../sceneManager';
-import { AppWidth, AppHeight } from '../../constants/constants';
+import app from '../../app';
+import store from '../../store';
+import { isolateScenes } from '../sceneManagerSlice';
+import { AppWidth } from '../../constants/constants';
 
-const newGameButtonTexture = PIXI.Texture.from('../../../assets/main-menu-new-game.png');
-
-const onTapNewGameButton = (sceneName) => {
-  store.dispatch(changeScene(sceneName));
-  generateNewScene();
+const onTapNewGameButton = (sceneArray) => {
+  store.dispatch(isolateScenes(sceneArray));
+  //removeSceneAndTicker(['Main Menu']);
 };
 
 export const buildMainMenuScene = () => {
+  console.log(app.loader)
   const mainMenuSceneContainer = new PIXI.Container();
-  const newGameButtonSprite = new PIXI.Sprite(newGameButtonTexture);
-  newGameButtonSprite.on('pointertap', () => onTapNewGameButton('Battle'));
+  mainMenuSceneContainer.name = 'mainMenuSceneContainer';
+  const newGameButtonSprite = new PIXI.Sprite.from(app.loader.resources.newGameButton.texture);
+  newGameButtonSprite.on('pointertap', () => onTapNewGameButton(['Battle']));
   newGameButtonSprite.width = 350;
   newGameButtonSprite.height = 50;
   newGameButtonSprite.x = AppWidth / 2 - 175;
   newGameButtonSprite.y = 500;
-  return mainMenuSceneContainer.addChild(newGameButtonSprite);
+  newGameButtonSprite.interactive = true;
+  newGameButtonSprite.buttonMode = true;
+  newGameButtonSprite.name = 'newGameButtonSprite';
+  mainMenuSceneContainer.addChild(newGameButtonSprite);
+
+  return mainMenuSceneContainer;
 };

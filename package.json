@@ -24,6 +24,6 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",
-    "pixi.js": "^5.3.3"
+    "pixi.js": "^6.0.2"
   }
 }

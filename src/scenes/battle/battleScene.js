@@ -1,6 +1,9 @@
 const fullHeartTexture = PIXI.Texture.from('../../assets/full-heart.png');
 const emptyHeartTexture = PIXI.Texture.from('../../assets/empty-heart.png');
 
+class BattleScene
+
+
 const updateHealth = (blobIndex, blobState) => {
   allBlobsContainer.children[blobIndex].children.find(child => child.name ==='heartContainer').children.forEach((heart, index) => {
     blobState.currentHealth >= index + 1 ? heart.texture = fullHeartTexture : emptyHeartTexture;

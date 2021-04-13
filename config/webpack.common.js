@@ -10,12 +10,12 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: [ '.jsx', '.js', '.scss', '.png', '.jpeg', '.jpg' ]
+    extensions: [ '.jsx', '.js', '.scss', '.png', '.jpeg', '.jpg', 'pvr' ]
   },
   module: {
     rules: [
       {
-        test: /\.(png|jpe?g|gif|svg|ico)$/,
+        test: /\.(png|jpe?g|gif|svg|ico|pvr)$/,
         use: [
           {
             loader: 'file-loader',
