@@ -10,7 +10,7 @@ const loadAllResources = (app) => {
   .add('halfHeart', '../../assets/goo/half-heart.png')
   .add('threeQuartersHeart', '../../assets/goo/three-quarters-heart.png')
   .add('full-heart', '../../assets/goo/full-heart.png')
-  .add('emptyHeart', '../../assets/goo/quarter-heart.png')
+  .add('emptyHeart', '../../assets/goo/empty-heart.png')
   .add('gooBox', '../../assets/goo/grey-box.png');
 
   app.loader.onComplete.add(() => SceneManager.startGame());

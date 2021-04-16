@@ -1,22 +1,22 @@
-import store from '../store';
 import app from '../app';
 import loadAllResources from '../load/load';
-import { buildMainMenuScene } from './mainMenu/mainMenuScene';
-import { removeScene, isolateScenes } from './sceneManagerSlice';
+import MainMenuScene from './mainMenu/mainMenuScene';
 import { 
   MainMenuSceneName,
   AppWidth,
   AppHeight
 } from '../constants/constants';
-import TickerManager from './tickerManager';
 
 class CreateSceneManager {
   constructor () {
-    this.scenes = {};
+    this.scenes = {
+
+    };
+    this.activeScene = [''];
   }
 
   generateNewScene (sceneName) {
-    if (sceneName === MainMenuSceneName) this.scenes[sceneName] = buildMainMenuScene();
+    if (sceneName === MainMenuSceneName) this.scenes[sceneName] = new MainMenuScene();
   }
 
   loadResources() {
@@ -44,17 +44,16 @@ class CreateSceneManager {
     document.getElementById('pixi-root').append(app.view);
     window.addEventListener("resize", () => resize(app));
     this.loadResources();
-    console.log(app.stage)
   }
 
   startGame() {
     this.generateNewScene(MainMenuSceneName);
-    app.stage.addChild(this.scenes[MainMenuSceneName]);
-    app.ticker.add(TickerManager.tickers.scenes[MainMenuSceneName]);
+    app.stage.addChild(this.scenes[MainMenuSceneName].container);
     app.ticker.start();
   }
 
-  loadScenes () {
+  loadScenes (sceneNames) {
+    this.activeScenes = [sceneName];
 
   }
 }

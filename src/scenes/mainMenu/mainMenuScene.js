@@ -1,29 +1,27 @@
 import * as PIXI from 'pixi.js';
 
+import sceneClass from '../sceneClass';
+import { buildMainMenuTicker } from './mainMenuTicker';
+import { MainMenuSceneName } from '../../constants/constants';
+
 import app from '../../app';
-import store from '../../store';
-import { isolateScenes } from '../sceneManagerSlice';
 import { AppWidth } from '../../constants/constants';
 
-const onTapNewGameButton = (sceneArray) => {
-  store.dispatch(isolateScenes(sceneArray));
-  //removeSceneAndTicker(['Main Menu']);
-};
+export default class MainMenuScene extends sceneClass{
+  constructor () {
+    super(`${MainMenuSceneName}Container`);
 
-export const buildMainMenuScene = () => {
-  console.log(app.loader)
-  const mainMenuSceneContainer = new PIXI.Container();
-  mainMenuSceneContainer.name = 'mainMenuSceneContainer';
-  const newGameButtonSprite = new PIXI.Sprite.from(app.loader.resources.newGameButton.texture);
-  newGameButtonSprite.on('pointertap', () => onTapNewGameButton(['Battle']));
-  newGameButtonSprite.width = 350;
-  newGameButtonSprite.height = 50;
-  newGameButtonSprite.x = AppWidth / 2 - 175;
-  newGameButtonSprite.y = 500;
-  newGameButtonSprite.interactive = true;
-  newGameButtonSprite.buttonMode = true;
-  newGameButtonSprite.name = 'newGameButtonSprite';
-  mainMenuSceneContainer.addChild(newGameButtonSprite);
-
-  return mainMenuSceneContainer;
-};
+    this.assets.newGameButtonSprite = new PIXI.Sprite.from(app.loader.resources.newGameButton.texture);
+    // this.assets.newGameButtonSprite.on('pointertap', () => onTapNewGameButton(['Battle']));
+    this.assets.newGameButtonSprite.width = 350;
+    this.assets.newGameButtonSprite.height = 50;
+    this.assets.newGameButtonSprite.x = AppWidth / 2 - 175;
+    this.assets.newGameButtonSprite.y = 500;
+    this.assets.newGameButtonSprite.interactive = true;
+    this.assets.newGameButtonSprite.buttonMode = true;
+    this.assets.newGameButtonSprite.name = 'newGameButtonSprite';
+    this.container.addChild(this.assets.newGameButtonSprite);
+    this.createTicker(buildMainMenuTicker, `${MainMenuSceneName}Ticker`);
+    this.startTicker(`${MainMenuSceneName}Ticker`);
+  }
+}

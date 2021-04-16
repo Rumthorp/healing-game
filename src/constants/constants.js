@@ -4,4 +4,4 @@ export const NumberOfGoo = 16;
 
 //
 
-export const MainMenuSceneName = 'Main Menu';
+export const MainMenuSceneName = 'MainMenuScene';

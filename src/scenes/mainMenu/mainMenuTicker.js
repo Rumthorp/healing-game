@@ -1,4 +1,4 @@
-const buildMainMenuTicker = () => {
+export const buildMainMenuTicker = () => {
   let timer = 0;
   const ticker = (delta) => {
     if (timer % 60 <= 1) {
@@ -8,5 +8,3 @@ const buildMainMenuTicker = () => {
   };
   return ticker;
 };
-
-export default buildMainMenuTicker;
