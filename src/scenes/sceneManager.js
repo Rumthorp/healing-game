@@ -1,30 +1,29 @@
-import app from '../app';
+import { root } from '../app';
+import ComponentClass from './componentClass';
+import createInitialState from '../data/createInitialState';
 import loadAllResources from '../load/load';
 import MainMenuScene from './mainMenu/mainMenuScene';
+import BattleScene from './battle/battleScene';
 import { 
-  MainMenuSceneName,
+  SceneManagerName,
   AppWidth,
-  AppHeight
+  AppHeight,
+  MainMenuSceneName,
+  BattleSceneName
 } from '../constants/constants';
 
-class CreateSceneManager {
+export default class SceneManager extends ComponentClass {
   constructor () {
-    this.scenes = {
-
-    };
-    this.activeScene = [''];
-  }
-
-  generateNewScene (sceneName) {
-    if (sceneName === MainMenuSceneName) this.scenes[sceneName] = new MainMenuScene();
+    super(SceneManagerName);
+    this.data = createInitialState();
   }
 
   loadResources() {
-    loadAllResources(app);
+    loadAllResources(root);
   }
 
   initialLoad () {
-    const resize = (app) => {
+    const resize = (root) => {
       const viewportWidth = window.innerWidth;
       const viewportHeight = window.innerHeight;
       let newViewportWidth;
@@ -36,26 +35,39 @@ class CreateSceneManager {
         newViewportWidth = viewportWidth;
         newViewportHeight = (newViewportWidth * AppHeight) / AppWidth;
       }
-      app.renderer.resize(newViewportWidth, newViewportHeight);
-      app.stage.scale.set(newViewportWidth / AppWidth, newViewportHeight / AppHeight);
+      root.renderer.resize(newViewportWidth, newViewportHeight);
+      root.stage.scale.set(newViewportWidth / AppWidth, newViewportHeight / AppHeight);
     }
     
-    resize(app);
-    document.getElementById('pixi-root').append(app.view);
-    window.addEventListener("resize", () => resize(app));
+    resize(root);
+    document.getElementById('pixi-root').append(root.view);
+    window.addEventListener("resize", () => resize(root));
     this.loadResources();
   }
 
   startGame() {
-    this.generateNewScene(MainMenuSceneName);
-    app.stage.addChild(this.scenes[MainMenuSceneName].container);
-    app.ticker.start();
+    this.createAsset('component', new MainMenuScene(), true);
+    root.ticker.start();
+    console.log(this)
   }
 
-  loadScenes (sceneNames) {
-    this.activeScenes = [sceneName];
-
+  changeScene(scenes, isolate) {
+    if (isolate) {
+      for (let assetName in this.assets) {
+        this.removeAsset(assetName, true, true);
+      }
+    }
+    scenes.forEach((sceneName) => {
+      if (sceneName === MainMenuSceneName) {
+        this.assets[MainMenuSceneName]
+        ? this.addAsset(MainMenuSceneName)
+        : this.createAsset('component', new MainMenuScene(), true);
+      } 
+      if (sceneName === BattleSceneName) {
+        this.assets[BattleSceneName]
+        ? this.addAsset(BattleSceneName)
+        : this.createAsset('component', new BattleScene(), true);
+      } 
+    });
   }
 }
-
-export const SceneManager = new CreateSceneManager();

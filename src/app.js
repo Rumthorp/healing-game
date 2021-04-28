@@ -1,7 +1,8 @@
 import './styles/main.scss';
 import * as PIXI from 'pixi.js';
 
-import { SceneManager } from './scenes/sceneManager';
+import SceneManagerClass from './scenes/sceneManager';
+import { SceneManagerName } from './constants/constants';
 import { 
   AppWidth,
   AppHeight
@@ -13,9 +14,10 @@ const app = new PIXI.Application({
   autoDensity: true,
   resolution: window.devicePixelRatio
 });
-export default app;
-
-SceneManager.initialLoad();
+export const root = app;
+app.stage.addChild(new SceneManagerClass());
+app.stage.getChildByName(SceneManagerName).initialLoad();
+export const SceneManager = app.stage.getChildByName(SceneManagerName);
 
 
 
