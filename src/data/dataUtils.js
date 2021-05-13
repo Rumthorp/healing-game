@@ -1,11 +1,17 @@
-export const generateInitialGooState = (amount, maxHealth) => {
-  const goo = {};
-  for (let i = 0; i < amount; i ++) {
-    goo[i] = {
-      health: maxHealth,
-      maxHealth,
-      gridIndex: i
-    };
-  }
+import { Constants } from '../static/constants';
+
+export const generateInitialGooState = (maxHealth) => {
+  const goo = [];
+  Constants.GooGridPositions.forEach((rowArray, rowIndex) => {
+    goo.push([]);
+    rowArray.forEach((positionObj, index) => {
+      goo[rowIndex].push(
+        {
+          currentHealth: maxHealth,
+          maxHealth
+        }
+      );
+    });
+  });
   return goo;
 };

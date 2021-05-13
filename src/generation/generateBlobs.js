@@ -13,7 +13,6 @@ const emptyHeartTexture = PIXI.Texture.from('../../../assets/empty-heart.png');
 const borderTexture = PIXI.Texture.from('../../../assets/grey-box.png');
 
 const onClick = (blobIndex, one, two) => {
-  console.log(blobIndex, one, two)
   let blobStatsState = store.getState().blobStats[blobIndex];
   if (blobStatsState.currentHealth < blobStatsState.maxHealth) {
     store.dispatch(addHealth(blobIndex));

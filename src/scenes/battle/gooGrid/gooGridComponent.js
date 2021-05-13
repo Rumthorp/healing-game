@@ -1,16 +1,16 @@
+import { SceneManager } from '../../../app';
 import ComponentClass from '../../componentClass';
 import GooComponent from './gooComponent';
-import { 
-  GooGridComponentName,
-  NumberOfGoo
-} from '../../../constants/constants';
+import { ComponentNames } from '../../../static/names';
 
-export default class gooGridScene extends ComponentClass {
+export default class GooGridScene extends ComponentClass {
   constructor () {
-    super(GooGridComponentName);
+    super(ComponentNames.GooGrid);
 
-    for (let i = 0; i < 16; i ++) {
-      this.createAsset('component', new GooComponent(i), true);
-    }
+    SceneManager.data.goo.forEach((gooRowArray, rowIndex) => {
+      gooRowArray.forEach((gooData, columnIndex) => {
+        this.createAsset('component', new GooComponent(rowIndex, columnIndex), true);
+      });
+    });
   }
 }

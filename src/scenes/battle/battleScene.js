@@ -1,10 +1,10 @@
 import ComponentClass from '../componentClass';
 import GooGrid from './gooGrid/gooGridComponent';
-import { BattleSceneName } from '../../constants/constants';
+import { SceneNames } from '../../static/names';
 
 export default class BattleScene extends ComponentClass {
   constructor() {
-    super(BattleSceneName);
+    super(SceneNames.Battle);
 
     this.createAsset('component', new GooGrid(), true);
   }

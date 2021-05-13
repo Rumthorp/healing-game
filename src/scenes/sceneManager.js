@@ -2,20 +2,17 @@ import { root } from '../app';
 import ComponentClass from './componentClass';
 import createInitialState from '../data/createInitialState';
 import loadAllResources from '../load/load';
+import AnimationManager from '../animations/animationManager';
 import MainMenuScene from './mainMenu/mainMenuScene';
 import BattleScene from './battle/battleScene';
-import { 
-  SceneManagerName,
-  AppWidth,
-  AppHeight,
-  MainMenuSceneName,
-  BattleSceneName
-} from '../constants/constants';
+import { SceneNames } from '../static/names';
+import { Constants } from '../static/constants';
 
 export default class SceneManager extends ComponentClass {
   constructor () {
-    super(SceneManagerName);
+    super(SceneNames.SceneManager);
     this.data = createInitialState();
+    this.animation = new AnimationManager();
   }
 
   loadResources() {
@@ -28,15 +25,15 @@ export default class SceneManager extends ComponentClass {
       const viewportHeight = window.innerHeight;
       let newViewportWidth;
       let newViewportHeight;
-      if (viewportHeight / viewportWidth < AppHeight / AppWidth) {
+      if (viewportHeight / viewportWidth < Constants.AppHeight / Constants.AppWidth) {
         newViewportHeight = viewportHeight;
-        newViewportWidth = (newViewportHeight * AppWidth) / AppHeight;
+        newViewportWidth = (newViewportHeight * Constants.AppWidth) / Constants.AppHeight;
       } else {
         newViewportWidth = viewportWidth;
-        newViewportHeight = (newViewportWidth * AppHeight) / AppWidth;
+        newViewportHeight = (newViewportWidth * Constants.AppHeight) / Constants.AppWidth;
       }
       root.renderer.resize(newViewportWidth, newViewportHeight);
-      root.stage.scale.set(newViewportWidth / AppWidth, newViewportHeight / AppHeight);
+      root.stage.scale.set(newViewportWidth / Constants.AppWidth, newViewportHeight / Constants.AppHeight);
     }
     
     resize(root);
@@ -48,7 +45,7 @@ export default class SceneManager extends ComponentClass {
   startGame() {
     this.createAsset('component', new MainMenuScene(), true);
     root.ticker.start();
-    console.log(this)
+    console.log(root);
   }
 
   changeScene(scenes, isolate) {
@@ -58,14 +55,14 @@ export default class SceneManager extends ComponentClass {
       }
     }
     scenes.forEach((sceneName) => {
-      if (sceneName === MainMenuSceneName) {
-        this.assets[MainMenuSceneName]
-        ? this.addAsset(MainMenuSceneName)
+      if (sceneName === SceneNames.MainMenu) {
+        this.assets[SceneNames.MainMenu]
+        ? this.addAsset(SceneNames.MainMenu)
         : this.createAsset('component', new MainMenuScene(), true);
       } 
-      if (sceneName === BattleSceneName) {
-        this.assets[BattleSceneName]
-        ? this.addAsset(BattleSceneName)
+      if (sceneName === SceneNames.Battle) {
+        this.assets[SceneNames.Battle]
+        ? this.addAsset(SceneNames.Battle)
         : this.createAsset('component', new BattleScene(), true);
       } 
     });

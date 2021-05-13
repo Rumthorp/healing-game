@@ -54,14 +54,24 @@ export default class extends PIXI.Container {
 
   createAsset(type, assetData, addAsset, texture) {
     let asset;
-    if (type === 'sprite' ) {
-      asset = PIXI.Sprite.from(texture);
-      for (let propertyName in assetData) {
-        asset[propertyName] = assetData[propertyName];
-      }
+    if (type === 'sprite') {
+      asset = new PIXI.Sprite.from(texture);
+    }
+    if (type === 'animatedSprite') {
+      asset = new PIXI.AnimatedSprite(texture);
     }
     if (type === 'component') {
       asset = assetData;
+    }
+    if (type === 'animatedSprite' || type === 'sprite') {
+      for (let propertyName in assetData) {
+        if (typeof assetData[propertyName] === 'function') {
+          let props = assetData[propertyName]();
+          asset[propertyName](...props);
+          continue;
+        }
+        asset[propertyName] = assetData[propertyName];
+      }
     }
     this.assets[assetData.name] = {
       asset,
@@ -71,6 +81,7 @@ export default class extends PIXI.Container {
     if (addAsset) {
       this.addAsset(assetData.name);
     }
+    return asset;
   }
 
   addAsset(name) {
