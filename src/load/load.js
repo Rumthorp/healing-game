@@ -12,7 +12,8 @@ const loadAllResources = () => {
   .add(Names.MainMenuNames.NewGameButton, '../../assets/menus/MainMenuNewGame.png')
   .add(Names.GooNames.GooBox, '../../assets/goo/GooBox.png')
   .add(Names.GooNames.GooHeart, '../../assets/goo/GooHeart.json')
-  .add(Names.GooNames.GooSprite, '../../assets/goo/Goo.json');
+  .add(Names.GooNames.GooSprite, '../../assets/goo/Goo.json')
+  .add(Names.FoeNames.EvilEye, '../../assets/foes/evilEye/EvilEye.json');
 
   root.loader.onComplete.add(() => SceneManager.startGame());
 

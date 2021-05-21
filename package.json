@@ -23,6 +23,7 @@
     "webpack-merge": "^5.0.9"
   },
   "dependencies": {
+    "howler": "^2.2.1",
     "pixi.js": "^6.0.2"
   }
 }

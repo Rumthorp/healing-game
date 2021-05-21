@@ -1,0 +1,389 @@
+{"frames": {
+
+"EvilEyeAttack2_0.png":
+{
+	"frame": {"x":100,"y":103,"w":43,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":56,"y":60,"w":43,"h":33},
+	"sourceSize": {"w":100,"h":150}
+},
+"EvilEyeAttack2_1.png":
+{
+	"frame": {"x":44,"y":19,"w":26,"h":22},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":16,"y":62,"w":26,"h":22},
+	"sourceSize": {"w":100,"h":150}
+},
+"EvilEyeAttack2_2.png":
+{
+	"frame": {"x":227,"y":0,"w":25,"h":19},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":70,"y":62,"w":25,"h":19},
+	"sourceSize": {"w":100,"h":150}
+},
+"EvilEyeAttack2_3.png":
+{
+	"frame": {"x":149,"y":0,"w":24,"h":18},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":23,"y":62,"w":24,"h":18},
+	"sourceSize": {"w":100,"h":150}
+},
+"EvilEyeAttack2_4.png":
+{
+	"frame": {"x":0,"y":19,"w":21,"h":20},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":72,"y":62,"w":21,"h":20},
+	"sourceSize": {"w":100,"h":150}
+},
+"EvilEyeAttack2_5.png":
+{
+	"frame": {"x":124,"y":174,"w":43,"h":47},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":48,"w":43,"h":47},
+	"sourceSize": {"w":100,"h":150}
+},
+"EvilEyeAttack2_6.png":
+{
+	"frame": {"x":0,"y":174,"w":33,"h":40},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":67,"y":52,"w":33,"h":40},
+	"sourceSize": {"w":100,"h":150}
+},
+"EvilEyeAttack2_7.png":
+{
+	"frame": {"x":167,"y":174,"w":35,"h":47},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":20,"y":48,"w":35,"h":47},
+	"sourceSize": {"w":100,"h":150}
+},
+"EvilEyeAttack3_0.png":
+{
+	"frame": {"x":92,"y":19,"w":27,"h":25},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":17,"y":17,"w":27,"h":25},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeAttack3_1.png":
+{
+	"frame": {"x":58,"y":0,"w":20,"h":16},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":22,"y":21,"w":20,"h":16},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeAttack3_2.png":
+{
+	"frame": {"x":78,"y":0,"w":20,"h":16},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":22,"y":21,"w":20,"h":16},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeAttack3_3.png":
+{
+	"frame": {"x":119,"y":19,"w":35,"h":26},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":17,"w":35,"h":26},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeAttack3_4.png":
+{
+	"frame": {"x":86,"y":136,"w":37,"h":34},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":9,"w":37,"h":34},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeAttack3_5.png":
+{
+	"frame": {"x":63,"y":103,"w":37,"h":32},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":10,"w":37,"h":32},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeAttack_0.png":
+{
+	"frame": {"x":143,"y":103,"w":43,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":10,"w":43,"h":33},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeAttack_1.png":
+{
+	"frame": {"x":197,"y":72,"w":43,"h":31},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":12,"w":43,"h":31},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeAttack_2.png":
+{
+	"frame": {"x":191,"y":45,"w":43,"h":27},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":12,"w":43,"h":27},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeAttack_3.png":
+{
+	"frame": {"x":0,"y":72,"w":43,"h":27},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":12,"w":43,"h":27},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeAttack_4.png":
+{
+	"frame": {"x":154,"y":19,"w":43,"h":26},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":12,"w":43,"h":26},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeAttack_5.png":
+{
+	"frame": {"x":126,"y":72,"w":39,"h":28},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":11,"w":39,"h":28},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeAttack_6.png":
+{
+	"frame": {"x":197,"y":19,"w":37,"h":26},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":10,"y":16,"w":37,"h":26},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeAttack_7.png":
+{
+	"frame": {"x":0,"y":45,"w":35,"h":26},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":16,"w":35,"h":26},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeDeath_0.png":
+{
+	"frame": {"x":186,"y":103,"w":43,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":56,"y":60,"w":43,"h":33},
+	"sourceSize": {"w":150,"h":150}
+},
+"EvilEyeDeath_1.png":
+{
+	"frame": {"x":0,"y":103,"w":21,"h":31},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":68,"y":69,"w":21,"h":31},
+	"sourceSize": {"w":150,"h":150}
+},
+"EvilEyeDeath_2.png":
+{
+	"frame": {"x":0,"y":0,"w":58,"h":15},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":49,"y":87,"w":58,"h":15},
+	"sourceSize": {"w":150,"h":150}
+},
+"EvilEyeDeath_3.png":
+{
+	"frame": {"x":98,"y":0,"w":51,"h":17},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":52,"y":85,"w":51,"h":17},
+	"sourceSize": {"w":150,"h":150}
+},
+"EvilEyeFlight_0.png":
+{
+	"frame": {"x":0,"y":136,"w":43,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":10,"w":43,"h":33},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeFlight_1.png":
+{
+	"frame": {"x":123,"y":136,"w":43,"h":34},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":9,"w":43,"h":34},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeFlight_2.png":
+{
+	"frame": {"x":21,"y":103,"w":42,"h":31},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":9,"w":42,"h":31},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeFlight_3.png":
+{
+	"frame": {"x":43,"y":72,"w":41,"h":27},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":14,"w":41,"h":27},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeFlight_4.png":
+{
+	"frame": {"x":35,"y":45,"w":42,"h":26},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":15,"w":42,"h":26},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeFlight_5.png":
+{
+	"frame": {"x":77,"y":45,"w":44,"h":26},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":16,"w":44,"h":26},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeFlight_6.png":
+{
+	"frame": {"x":121,"y":45,"w":42,"h":26},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":17,"w":42,"h":26},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeFlight_7.png":
+{
+	"frame": {"x":84,"y":72,"w":42,"h":27},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":17,"w":42,"h":27},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeHit_0.png":
+{
+	"frame": {"x":43,"y":136,"w":43,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":10,"w":43,"h":33},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeHit_1.png":
+{
+	"frame": {"x":166,"y":136,"w":43,"h":35},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":10,"w":43,"h":35},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeHit_2.png":
+{
+	"frame": {"x":163,"y":45,"w":28,"h":26},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":16,"y":13,"w":28,"h":26},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeHit_3.png":
+{
+	"frame": {"x":70,"y":19,"w":22,"h":23},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":17,"y":15,"w":22,"h":23},
+	"sourceSize": {"w":50,"h":50}
+},
+"EvilEyeProjectile_0.png":
+{
+	"frame": {"x":173,"y":0,"w":18,"h":18},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":15,"y":15,"w":18,"h":18},
+	"sourceSize": {"w":48,"h":48}
+},
+"EvilEyeProjectile_1.png":
+{
+	"frame": {"x":191,"y":0,"w":18,"h":18},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":15,"y":15,"w":18,"h":18},
+	"sourceSize": {"w":48,"h":48}
+},
+"EvilEyeProjectile_2.png":
+{
+	"frame": {"x":209,"y":0,"w":18,"h":18},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":15,"y":15,"w":18,"h":18},
+	"sourceSize": {"w":48,"h":48}
+},
+"EvilEyeProjectile_3.png":
+{
+	"frame": {"x":21,"y":19,"w":23,"h":21},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":12,"w":23,"h":21},
+	"sourceSize": {"w":48,"h":48}
+},
+"EvilEyeProjectile_4.png":
+{
+	"frame": {"x":165,"y":72,"w":32,"h":30},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":8,"w":32,"h":30},
+	"sourceSize": {"w":48,"h":48}
+},
+"EvilEyeProjectile_5.png":
+{
+	"frame": {"x":209,"y":136,"w":39,"h":38},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":4,"w":39,"h":38},
+	"sourceSize": {"w":48,"h":48}
+},
+"EvilEyeProjectile_6.png":
+{
+	"frame": {"x":33,"y":174,"w":45,"h":45},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":45,"h":45},
+	"sourceSize": {"w":48,"h":48}
+},
+"EvilEyeProjectile_7.png":
+{
+	"frame": {"x":78,"y":174,"w":46,"h":46},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":46},
+	"sourceSize": {"w":48,"h":48}
+}},
+"animations": {
+	"EvilEyeAttack": ["EvilEyeAttack_0.png","EvilEyeAttack_1.png","EvilEyeAttack_2.png","EvilEyeAttack_3.png","EvilEyeAttack_4.png","EvilEyeAttack_5.png","EvilEyeAttack_6.png","EvilEyeAttack_7.png"],
+	"EvilEyeAttack2": ["EvilEyeAttack2_0.png","EvilEyeAttack2_1.png","EvilEyeAttack2_2.png","EvilEyeAttack2_3.png","EvilEyeAttack2_4.png","EvilEyeAttack2_5.png","EvilEyeAttack2_6.png","EvilEyeAttack2_7.png"],
+	"EvilEyeAttack3": ["EvilEyeAttack3_0.png","EvilEyeAttack3_1.png","EvilEyeAttack3_2.png","EvilEyeAttack3_3.png","EvilEyeAttack3_4.png","EvilEyeAttack3_5.png"],
+	"EvilEyeDeath": ["EvilEyeDeath_0.png","EvilEyeDeath_1.png","EvilEyeDeath_2.png","EvilEyeDeath_3.png"],
+	"EvilEyeFlight": ["EvilEyeFlight_0.png","EvilEyeFlight_1.png","EvilEyeFlight_2.png","EvilEyeFlight_3.png","EvilEyeFlight_4.png","EvilEyeFlight_5.png","EvilEyeFlight_6.png","EvilEyeFlight_7.png"],
+	"EvilEyeHit": ["EvilEyeHit_0.png","EvilEyeHit_1.png","EvilEyeHit_2.png","EvilEyeHit_3.png"],
+	"EvilEyeProjectile": ["EvilEyeProjectile_0.png","EvilEyeProjectile_1.png","EvilEyeProjectile_2.png","EvilEyeProjectile_3.png","EvilEyeProjectile_4.png","EvilEyeProjectile_5.png","EvilEyeProjectile_6.png","EvilEyeProjectile_7.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "EvilEye.png",
+	"format": "RGBA8888",
+	"size": {"w":252,"h":221},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:8b04e4f2ee89d725ccac5fefe0fc2c13:4a7301dcb0cb89a239dc7a12bb830ef8:d7051db8c3cf2005ef12e6f6fa79984b$"
+}
+}

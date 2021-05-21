@@ -21,3 +21,7 @@ export const GooNames = {
   GooBox: 'GooBox',
   GooHeart: 'GooHeart'
 };
+
+export const FoeNames = {
+  EvilEye: 'EvilEye'
+}

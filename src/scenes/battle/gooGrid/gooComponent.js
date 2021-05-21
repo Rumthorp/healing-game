@@ -67,6 +67,6 @@ export default class GooComponent extends ComponentClass {
       4
     );
     this.addAsset(goo.name);
-    goo.play()
+    goo.play();
   }
 };

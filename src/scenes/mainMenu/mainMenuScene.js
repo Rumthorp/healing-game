@@ -34,7 +34,5 @@ export default class MainMenuScene extends ComponentClass{
     
     this.createTicker(buildMainMenuTicker, MainMenuNames.Ticker1);
     this.startTicker(MainMenuNames.Ticker1);
-    // this.createTicker(buildMainMenuTestTicker, `${MainMenuSceneName}TestTicker`, this.assets.newGameButtonSprite.asset);
-    // this.startTicker(`${MainMenuSceneName}TestTicker`);
   }
 }

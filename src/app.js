@@ -5,6 +5,7 @@ import SceneManagerClass from './scenes/sceneManager';
 import { SceneNames } from './static/names';
 import { Constants } from './static/constants';
 
+PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST
 const app = new PIXI.Application({
   width: Constants.AppWidth,
   height: Constants.AppHeight,
