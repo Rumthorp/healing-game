@@ -5,7 +5,10 @@ import loadAllResources from '../load/load';
 import AnimationManager from '../animations/animationManager';
 import MainMenuScene from './mainMenu/mainMenuScene';
 import BattleScene from './battle/battleScene';
-import { SceneNames } from '../static/names';
+import {
+  SceneNames,
+  AnimationManagerNames
+} from '../static/names';
 import { Constants } from '../static/constants';
 
 export default class SceneManager extends ComponentClass {
@@ -13,6 +16,7 @@ export default class SceneManager extends ComponentClass {
     super(SceneNames.SceneManager);
     this.data = createInitialState();
     this.animation = new AnimationManager();
+    this.animation.startTicker(AnimationManagerNames.AnimationManagerTicker);
   }
 
   loadResources() {

@@ -35,7 +35,7 @@ export default class GooComponent extends ComponentClass {
         heartAsset = this.createAsset(
           'animatedSprite', 
           {
-            name: `${GooNames.GooHeart}-${index}`,
+            name: `${GooNames.GooHeart}-${index}-${rowIndex}-${columnIndex}`,
             x: positionObj.x,
             y: positionObj.y,
             width: Constants.GooHeartSize,
@@ -54,8 +54,7 @@ export default class GooComponent extends ComponentClass {
     let goo = this.createAsset(
       'animatedSprite',
       {
-        name: GooNames.GooSprite,
-        animationSpeed: .25
+        name: GooNames.GooSprite
       },
       false,
       root.loader.resources[GooNames.GooSprite].spritesheet.animations['GooIdle']
@@ -67,6 +66,5 @@ export default class GooComponent extends ComponentClass {
       4
     );
     this.addAsset(goo.name);
-    goo.play();
   }
 };

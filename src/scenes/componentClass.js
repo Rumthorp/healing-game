@@ -3,11 +3,11 @@ import { root } from "../app";
 import * as PIXI from 'pixi.js';
 
 export default class extends PIXI.Container {
-  constructor(sceneName) {
+  constructor(componentName) {
     super();
     this.assets = {};
     this.tickers = {};
-    this.name = sceneName;
+    this.name = componentName;
   }
 
   createTicker(tickerConstructor, tickerName) {

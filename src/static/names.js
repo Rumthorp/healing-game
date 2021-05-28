@@ -8,6 +8,8 @@ export const SceneNames = {
 export const ComponentNames = {
   GooGrid: 'GooGrid',
   Goo: 'Goo',
+  Conductor: 'Conductor',
+  AnimationManager: 'AnimationManager'
 };
 
 export const MainMenuNames = {
@@ -25,3 +27,15 @@ export const GooNames = {
 export const FoeNames = {
   EvilEye: 'EvilEye'
 }
+
+export const ConductorNames = {
+  ConductorTicker: 'ConductorTicker'
+};
+
+export const AnimationManagerNames = {
+  AnimationManagerTicker: 'AnimationManagerTicker'
+};
+
+export const TrackNames = {
+  GoblinAttack: 'Goblin Attack'
+};
