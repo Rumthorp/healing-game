@@ -6,21 +6,21 @@
   "author": "Rumthorp <mattmerwinjennings@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "set NODE_ENV=development && webpack-dev-server --config config/webpack.dev.js --open",
+    "dev": "set NODE_ENV=development && webpack serve --config config/webpack.dev.js --open",
     "build": "set NODE_ENV=production && webpack --config config/webpack.prod.js"
   },
   "devDependencies": {
-    "clean-webpack-plugin": "^3.0.0",
-    "css-loader": "^4.2.0",
-    "file-loader": "^6.0.0",
-    "html-webpack-plugin": "^4.3.0",
-    "node-sass": "^4.14.1",
-    "sass-loader": "^9.0.2",
-    "style-loader": "^1.2.1",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^5.0.9"
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "css-loader": "^5.2.6",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "node-sass": "^6.0.0",
+    "sass-loader": "^11.1.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
   },
   "dependencies": {
     "howler": "^2.2.1",
