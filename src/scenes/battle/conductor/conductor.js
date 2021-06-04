@@ -13,7 +13,7 @@ class Conductor extends Component{
       src: [`../../../../assets/sound/music/${track.music}`]
     });
     this.beats = 0;
-    this.music.volume(.3);
+    this.music.volume(.05);
     this.markers = track.markers;
     this.events = track.events;
     this.recurringEvents = {};

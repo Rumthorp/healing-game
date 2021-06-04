@@ -52,11 +52,9 @@ export default class GooComponent extends ComponentClass {
       }
     });
     let goo = this.createAsset(
-      'animatedSprite',
+      'sprite',
       {
-        name: GooNames.GooSprite,
-        animationSpeed: .5,
-        loop: false
+        name: GooNames.GooSprite
       },
       false,
       root.loader.resources[GooNames.GooSprite].spritesheet.animations['GooIdle']

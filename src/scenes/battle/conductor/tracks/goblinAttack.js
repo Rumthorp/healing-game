@@ -30,7 +30,7 @@ export default {
                   for (let assetName in this.assets) {
                     this.assets[assetName].gotoAndPlay(0);
                   }
-                }, ((conductor.markers[conductor.beats + 1] - conductor.markers[conductor.beats]) - .11) * 1000)
+                }, ((conductor.markers[conductor.beats + 1] - conductor.markers[conductor.beats]) - .22) * 1000)
                 this.done = true;
               },
               done: false,

@@ -57,13 +57,10 @@ export default class extends PIXI.Container {
     if (type === 'sprite') {
       asset = new PIXI.Sprite.from(texture);
     }
-    if (type === 'animatedSprite') {
-      asset = new PIXI.AnimatedSprite(texture);
-    }
     if (type === 'component') {
       asset = assetData;
     }
-    if (type === 'animatedSprite' || type === 'sprite') {
+    if (type === 'sprite') {
       for (let propertyName in assetData) {
         if (typeof assetData[propertyName] === 'function') {
           let props = assetData[propertyName]();
