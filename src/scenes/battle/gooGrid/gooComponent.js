@@ -11,7 +11,7 @@ import {
 
 export default class GooComponent extends ComponentClass {
   constructor(rowIndex, columnIndex) {
-    super(`${ComponentNames.GooComponent}-${rowIndex}-${columnIndex}`);
+    super(`${ComponentNames.Goo}-${rowIndex}-${columnIndex}`);
     this.rowIndex = rowIndex;
     this.columnIndex = columnIndex;
     this.x = Constants.GooGridPositions[rowIndex][columnIndex].x;
@@ -54,7 +54,9 @@ export default class GooComponent extends ComponentClass {
     let goo = this.createAsset(
       'animatedSprite',
       {
-        name: GooNames.GooSprite
+        name: GooNames.GooSprite,
+        animationSpeed: .5,
+        loop: false
       },
       false,
       root.loader.resources[GooNames.GooSprite].spritesheet.animations['GooIdle']

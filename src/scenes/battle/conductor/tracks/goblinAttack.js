@@ -1,26 +1,46 @@
+import Markers from './markers/DDRKirby(ISQ) - Illumination Reel-IntroShortened';
+
+import { SceneManager } from '../../../../app';
+import {
+  SceneNames,
+  ComponentNames,
+  GooNames
+} from '../../../../static/names';
+
 export default {
   music: 'DDRKirby(ISQ) - Illumination Reel-IntroShortened.mp3',
+  markers: Markers,
   onStart: () => {
     
   },
-  events: [
-    {
-      trigger: .0001,
-      event: () => {
-        
-      }
-    },
-    {
-      trigger: 5,
-      event: () => {
-        console.log('hello from the conductor')
-      }
-    },
-    {
-      trigger: 10,
-      event: () => {
-        console.log('goodbye from the conductor')
+  events: {
+    .026: {
+      event: (conductor) => {
+        let assetObj = {};
+        let goo = SceneManager.getChildByName(SceneNames.Battle).getChildByName(ComponentNames.GooGrid).assets
+        for (let gooName in goo) {
+          assetObj[gooName] = goo[gooName].asset.assets[GooNames.GooSprite].asset;
+        }
+        conductor.registerRecurringEvent(
+          () => {
+            SceneManager.animation.registerAnimation({
+              assets: assetObj,
+              loop() {
+                setTimeout(() => {
+                  for (let assetName in this.assets) {
+                    this.assets[assetName].gotoAndPlay(0);
+                  }
+                }, ((conductor.markers[conductor.beats + 1] - conductor.markers[conductor.beats]) - .11) * 1000)
+                this.done = true;
+              },
+              done: false,
+              priority: 0,
+            });
+          },
+          () => conductor.beats >= conductor.markers.length - 1,
+          1
+        );
       }
     }
-  ]
+  }
 }

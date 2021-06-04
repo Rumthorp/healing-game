@@ -22,9 +22,9 @@ class AnimationManager extends Component {
   registerPriorityThreshhold(animation) {
     for(let assetName in animation.assets) {
       if (this.priorityThreshhold[assetName]) {
-        if (this.priorityThreshhold[assetName].priorityThreshhold >= animation.priority) delete animation.assets[assetName];
+        if (this.priorityThreshhold[assetName].priorityThreshhold > animation.priority) delete animation.assets[assetName];
         if (this.priorityThreshhold[assetName].priorityThreshhold < animation.priority) {
-          // this.animations[this.priorityThreshhold[assetName]]?.onPriorityOverride();
+          this.animations[this.priorityThreshhold[assetName]]?.onPriorityOverride();
           delete this.animations[this.priorityThreshhold[assetName]].assets[assetName];
           if (Object.keys(this.animations[this.priorityThreshhold[assetName]].assets).length === 0) removeAnimation(this.priorityThreshhold[assetName]);
           this.priorityThreshhold[assetName] = animation.priority;
@@ -35,7 +35,7 @@ class AnimationManager extends Component {
   }
 
   removeAnimation(animationNumber) {
-    removePriorityThreshhold(animationNumber);
+    this.removePriorityThreshhold(animationNumber);
     delete this.animations[animationNumber];
   }
 

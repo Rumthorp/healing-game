@@ -7,13 +7,19 @@
   "license": "MIT",
   "scripts": {
     "dev": "set NODE_ENV=development && webpack serve --config config/webpack.dev.js --open",
-    "build": "set NODE_ENV=production && webpack --config config/webpack.prod.js"
+    "build": "set NODE_ENV=production && webpack --config config/webpack.prod.js",
+    "markers": "babel-node fetchAndFormatData/fetchAndFormatMarkers.js"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/node": "^7.14.2",
+    "@babel/preset-env": "^7.14.4",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^5.2.6",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.1",
+    "node-fetch": "^2.6.1",
     "node-sass": "^6.0.0",
     "sass-loader": "^11.1.1",
     "style-loader": "^2.0.0",

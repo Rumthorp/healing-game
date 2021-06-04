@@ -39,3 +39,7 @@ export const AnimationManagerNames = {
 export const TrackNames = {
   GoblinAttack: 'Goblin Attack'
 };
+
+export const MusicFileNames = {
+  'DDRKirby(ISQ) - Illumination Reel-IntroShortened': 'DDRKirby(ISQ) - Illumination Reel-IntroShortened'
+}

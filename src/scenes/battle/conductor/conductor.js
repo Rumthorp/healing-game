@@ -12,14 +12,29 @@ class Conductor extends Component{
     this.music = new Howl({
       src: [`../../../../assets/sound/music/${track.music}`]
     });
+    this.beats = 0;
     this.music.volume(.3);
+    this.markers = track.markers;
     this.events = track.events;
-    this.createTicker(conductorTickerConstructor, ConductorNames.ConductorTicker, this);
+    this.recurringEvents = {};
+    this.recuringEventsCounter = 0;
   }
 
   startConductor() {
+    this.createTicker(conductorTickerConstructor, ConductorNames.ConductorTicker, this);
     this.startTicker(ConductorNames.ConductorTicker);
     this.music.play();
+  }
+
+  registerRecurringEvent(event, completeCondition, frequency) {
+    this.recurringEvents[this.recuringEventsCounter] = {
+      event,
+      completeCondition,
+      frequency,
+      frequencyCounter: frequency,
+      name: this.recuringEventsCounter
+    }
+    this.recuringEventsCounter ++;
   }
 }
 
