@@ -21,7 +21,14 @@ export const GooNames = {
   GooComponent: 'GooComponent',
   GooSprite: 'GooSprite',
   GooBox: 'GooBox',
-  GooHeart: 'GooHeart'
+  GooHeart: 'GooHeart',
+  Animations: {
+    GooDeath: 'GooDeath',
+    GooHit: 'GooHit',
+    GooIdle: 'GooIdle',
+    GooLeap: 'GooLeap',
+    GooLeap2: 'GooLeap2'
+  }
 };
 
 export const FoeNames = {
@@ -41,5 +48,6 @@ export const TrackNames = {
 };
 
 export const MusicFileNames = {
-  'DDRKirby(ISQ) - Illumination Reel-IntroShortened': 'DDRKirby(ISQ) - Illumination Reel-IntroShortened'
+  'DDRKirby(ISQ) - Illumination Reel-IntroShortened': 'DDRKirby(ISQ) - Illumination Reel-IntroShortened',
+  'DDRKirby(ISQ) - Enter the Vault_IntroShortened': 'DDRKirby(ISQ) - Enter the Vault_IntroShortened'
 }

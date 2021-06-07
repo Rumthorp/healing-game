@@ -1,11 +1,12 @@
 export default (animationManager) => {
-  return () => {
+  return (delta) => {
     for(let animationNumber in animationManager.animations) {
       if (animationManager.animations[animationNumber]?.done) {
+        if (animationManager.animations[animationNumber].onDone) animationManager.animations[animationNumber].onDone();
         animationManager.removeAnimation(animationNumber);
         continue;
       }
-      animationManager.animations[animationNumber]?.loop();
+      animationManager.animations[animationNumber]?.loop(delta);
     }
   }
 };

@@ -31,9 +31,10 @@ export default class GooComponent extends ComponentClass {
     let heartRemainder = maxHealth % 4;
     Constants.GooHeartPositions.forEach((positionObj, index) => {
       let heartAsset;
+      let heartTextures = root.loader.resources[GooNames.GooHeart].spritesheet.animations[GooNames.GooHeart]
       if (index + 1 <= numberOfHearts) {
         heartAsset = this.createAsset(
-          'animatedSprite', 
+          'sprite', 
           {
             name: `${GooNames.GooHeart}-${index}-${rowIndex}-${columnIndex}`,
             x: positionObj.x,
@@ -42,13 +43,12 @@ export default class GooComponent extends ComponentClass {
             height: Constants.GooHeartSize
           },
           true,
-          root.loader.resources[GooNames.GooHeart].spritesheet.animations[GooNames.GooHeart]
+          heartTextures[4]
         );
         if (index + 1 === numberOfHearts && heartRemainder !== 0) {
-          heartAsset.gotoAndStop(heartRemainder);
+          heartAsset.texture = heartTextures[heartRemainder];
           return;
         }
-        heartAsset.gotoAndStop(4);
       }
     });
     let goo = this.createAsset(
@@ -57,7 +57,7 @@ export default class GooComponent extends ComponentClass {
         name: GooNames.GooSprite
       },
       false,
-      root.loader.resources[GooNames.GooSprite].spritesheet.animations['GooIdle']
+      root.loader.resources[GooNames.GooSprite].spritesheet.animations['GooIdle'][0]
     );
     goo.setTransform(
       (Constants.GooBoxSize / 2) - ((goo.width * 3) / 2),
