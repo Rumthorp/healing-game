@@ -22,7 +22,6 @@ export default (conductor) => {
           rEvent.frequencyCounter ++;
         }
       }
-
       conductor.beats ++;
       nextBeat = conductor.markers[conductor.beats];
     }

@@ -8,6 +8,7 @@ export const SceneNames = {
 export const ComponentNames = {
   GooGrid: 'GooGrid',
   Goo: 'Goo',
+  GodZone: 'GodZone',
   Conductor: 'Conductor',
   AnimationManager: 'AnimationManager'
 };

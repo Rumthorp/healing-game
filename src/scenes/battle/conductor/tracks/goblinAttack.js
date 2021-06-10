@@ -32,8 +32,8 @@ export default {
                 conductor,
                 assetObj,
                 root.loader.resources[GooNames.GooSprite].spritesheet.animations[GooNames.Animations.GooIdle],
-                .04,
-                6
+                .03,
+                10
               )
             );
           },
