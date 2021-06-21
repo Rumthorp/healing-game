@@ -1,4 +1,3 @@
-
 export const SceneNames = {
   SceneManager: 'SceneManager',
   MainMenu: 'MainMenu',
@@ -9,13 +8,25 @@ export const ComponentNames = {
   GooGrid: 'GooGrid',
   Goo: 'Goo',
   GodZone: 'GodZone',
+  GodBox: 'GodBox',
+  PulseBar: 'PulseBar',
+  RhythmBar: 'RhythmBar',
+  SpellBar: 'SpellBar',
+  SpellButton: 'SpellButton',
   Conductor: 'Conductor',
-  AnimationManager: 'AnimationManager'
+  AnimationManager: 'AnimationManager',
+  SkillManager: 'SkillManager',
+  HealthManager: 'HealthManager',
+  EffectManager: 'EffectManager'
 };
 
 export const MainMenuNames = {
   NewGameButton: 'NewGameButton',
   Ticker1: 'Ticker1'
+};
+
+export const GodZoneNames = {
+  GodZoneBackground: 'GodZoneBackground'
 };
 
 export const GooNames = {
@@ -32,12 +43,48 @@ export const GooNames = {
   }
 };
 
+export const IconNames = {
+  ChainHealIcon: 'ChainHealIcon',
+  FastHealIcon: 'FastHealIcon',
+  HealOverTimeIcon: 'HealOverTimeIcon',
+  MeditateIcon: 'MeditateIcon',
+  LargeHealIcon: 'LargeHealIcon'
+};
+
+export const SkillNames = {
+  ChainHeal: {
+    name: 'ChainHeal',
+    displayName: 'Chain Heal'
+  },
+  FastHeal: {
+    name: 'FastHeal',
+    displayName: 'Fast Heal'
+  },
+  HealOverTime: {
+    name: 'HealOverTime',
+    displayName: 'Heal Over Time'
+  },
+  Meditate: {
+    name: 'Meditate',
+    displayName: 'Meditate'
+  },
+  LargeHeal: {
+    name: 'LargeHeal',
+    displayName: 'Large Heal'
+  }
+};
+
 export const FoeNames = {
   EvilEye: 'EvilEye'
-}
+};
 
 export const ConductorNames = {
   ConductorTicker: 'ConductorTicker'
+};
+
+export const PulseBarNames = {
+  PulseBarPulseSprite: 'PulseBarPulseSprite',
+  PulseBarTicker: 'PulseBarTicker'
 };
 
 export const AnimationManagerNames = {

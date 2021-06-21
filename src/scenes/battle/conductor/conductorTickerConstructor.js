@@ -5,6 +5,7 @@ export default (conductor) => {
   return () => {
     let progress = conductor.music.seek();
     if (progress >= nextBeat) {
+      console.log(nextBeat, progress)
       if (conductor.events[nextBeat]) {
         conductor.events[nextBeat].event(conductor);
       }

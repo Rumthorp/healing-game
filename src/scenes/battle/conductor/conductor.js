@@ -20,7 +20,7 @@ class Conductor extends Component{
     this.recuringEventsCounter = 0;
   }
 
-  startConductor() {
+  start() {
     this.createTicker(conductorTickerConstructor, ConductorNames.ConductorTicker, this);
     this.startTicker(ConductorNames.ConductorTicker);
     this.music.play();

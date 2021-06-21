@@ -1,11 +1,13 @@
 const AppWidth = 1280;
 const AppHeight = 720;
-const GooGridPadding = 60;
+const GooGridPadding = 110;
 const GooGridSize = AppHeight - (GooGridPadding * 2); //600
+const GooGridX = AppWidth - GooGridSize;
+const GooGridY = (AppHeight - GooGridSize) / 2;
 const GooGridDividerSpace = 12;
 const GooBoxSize = (GooGridSize - (GooGridDividerSpace * 2)) / 3; //192
 const GooBoxPadding = 5;
-const SideAreaSize = ((AppWidth - GooGridSize) / 2); //
+const SideAreaSize = ((AppWidth - GooGridSize) / 2);
 const GooScale = 2;
 const GooHeartDividerSpace = 3;
 const GooHeartSize = (GooBoxSize - (GooHeartDividerSpace * 4) - (GooBoxPadding * 2)) / 5; //36
@@ -15,8 +17,8 @@ const GooGridPositions = (() => {
     positions.push([]);
     for (let column = 0; column < 3; column ++) {
       let positionObj = {};
-      positionObj.x = ((column % 3) * (GooBoxSize + (column % 3 !== 3 ? GooGridDividerSpace : 0))) + SideAreaSize;
-      positionObj.y = ((row % 3) * (GooBoxSize + (row % 3 !== 3 ? GooGridDividerSpace : 0))) + GooGridPadding;
+      positionObj.x = (column * GooBoxSize) + (column * GooGridDividerSpace);
+      positionObj.y = (row * GooBoxSize) + (row * GooGridDividerSpace);
       positions[row].push(positionObj);
     }
   }
@@ -32,11 +34,29 @@ const GooHeartPositions = (() => {
   }
   return positions;
 })();
+const GodZoneWidth = 390;
+const GodZoneSpellButtonPadding = 5;
+const GodZoneSpellButtonWidth = (GodZoneWidth - (GodZoneSpellButtonPadding * 2)) / 3;
+const GodZoneSpellPositions = (() => {
+  let positions = [];
+  for (let row = 1; row < 4; row ++) {
+    positions.push([]);
+    for (let column = 1; column < 4; column ++) {
+      let positionObj = {};
+      positionObj.x = (((column - 1) * GodZoneSpellButtonWidth) + ((column - 1) * GodZoneSpellButtonPadding));
+      positionObj.y = AppHeight - ((row * GodZoneSpellButtonWidth) + (row * GodZoneSpellButtonPadding));
+      positions[row - 1].push(positionObj);
+    }
+  }
+  return positions;
+})();
 
 export const Constants = {
   AppWidth,
   AppHeight,
   GooGridPadding,
+  GooGridX,
+  GooGridY,
   GooBoxSize,
   GooBoxPadding,
   SideAreaSize,
@@ -44,7 +64,10 @@ export const Constants = {
   GooHeartSize,
   GooHeartDividerSpace,
   GooHeartPositions,
-  GooGridPositions
+  GooGridPositions,
+  GodZoneWidth,
+  GodZoneSpellButtonWidth,
+  GodZoneSpellPositions
 };
 
 

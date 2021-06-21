@@ -15,6 +15,8 @@ class AnimationManager extends Component {
 
   registerAnimation(animation) {
     this.animations[this.animationCounter] = animation;
+    if (animation.onStart) animation.onStart();
+    animation.start = true;
     if (!animation.ignorePriority) this.registerPriorityThreshhold(animation);
     this.animationCounter ++;
   }

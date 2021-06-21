@@ -78,6 +78,9 @@ export default class extends PIXI.Container {
     if (addAsset) {
       this.addAsset(assetData.name);
     }
+    asset.selfDestruct = () => {
+      this.destroyAsset(assetData.name);
+    }
     return asset;
   }
 

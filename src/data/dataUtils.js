@@ -15,3 +15,20 @@ export const generateInitialGooState = (maxHealth) => {
   });
   return goo;
 };
+
+export const generateInitialSkillState = (skillArray) => {
+  const skills = [];
+  let counter = 0;
+  Constants.GodZoneSpellPositions.forEach((rowArray, rowIndex) => {
+    skills.push([]);
+    rowArray.forEach((positionObj, index) => {
+      let skillName = skillArray[counter];
+      if (skillName === undefined) skillName = skillArray[0];
+      skills[rowIndex].push({
+        name: skillName
+      });
+      counter ++;
+    });
+  });
+  return skills;
+};
