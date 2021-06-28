@@ -97,5 +97,10 @@ export const TrackNames = {
 
 export const MusicFileNames = {
   'DDRKirby(ISQ) - Illumination Reel-IntroShortened': 'DDRKirby(ISQ) - Illumination Reel-IntroShortened',
-  'DDRKirby(ISQ) - Enter the Vault_IntroShortened': 'DDRKirby(ISQ) - Enter the Vault_IntroShortened'
-}
+  'DDRKirby(ISQ) - Enter the Vault_IntroShortened': 'DDRKirby(ISQ) - Enter the Vault_IntroShortened',
+  'Celtic Adventure Music - Land of the Brave_Shaved': 'Celtic Adventure Music - Land of the Brave_Shaved'
+};
+
+export const FontNames = {
+  ArialBlack: 'Arial Black'
+};

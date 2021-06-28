@@ -1,3 +1,4 @@
+import * as PIXI from 'pixi.js';
 import {
   root,
   SceneManager
@@ -6,17 +7,18 @@ import ComponentClass from '../componentClass';
 import { buildMainMenuTicker } from './mainMenuTickers';
 import {
   SceneNames,
-  MainMenuNames
+  MainMenuNames,
+  FontNames
 } from '../../static/names';
 import { Constants } from '../../static/constants';
 
 export default class MainMenuScene extends ComponentClass{
   constructor () {
     super(SceneNames.MainMenu);
-
     this.createAsset(
-      'sprite',
+      'text',
       {
+        fontName: FontNames.ArialBlack,
         name: MainMenuNames.NewGameButton,
         width: 350,
         height: 50,
@@ -24,9 +26,9 @@ export default class MainMenuScene extends ComponentClass{
         y: 500,
         interactive: true,
         buttonMode: true,
+        text: 'New Game'
       },
-      true,
-      root.loader.resources[MainMenuNames.NewGameButton].texture
+      true
     );
     this.assets[MainMenuNames.NewGameButton].asset.on('click', () => {
       SceneManager.changeScene([SceneNames.Battle], true)

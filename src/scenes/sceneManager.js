@@ -3,6 +3,7 @@ import ComponentClass from './componentClass';
 import createInitialState from '../data/createInitialState';
 import loadAllResources from '../load/load';
 import AnimationManager from '../animations/animationManager';
+import Conductor from '../conductor/conductor';
 import MainMenuScene from './mainMenu/mainMenuScene';
 import BattleScene from './battle/battleScene';
 import {
@@ -15,6 +16,7 @@ export default class SceneManager extends ComponentClass {
   constructor () {
     super(SceneNames.SceneManager);
     this.data = createInitialState();
+    this.conductor = new Conductor();
     this.animation = new AnimationManager();
     this.animation.startTicker(AnimationManagerNames.AnimationManagerTicker);
   }

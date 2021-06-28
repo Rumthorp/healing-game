@@ -2,14 +2,14 @@ import Markers from './markers/DDRKirby(ISQ) - Illumination Reel-IntroShortened'
 import {
   SceneManager,
   root
-} from '../../../../app';
+} from '../../app';
 import {
   SceneNames,
   ComponentNames,
   GooNames,
   PulseBarNames,
   MusicFileNames
-} from '../../../../static/names';
+} from '../../static/names';
 import {
   setGooTempo,
   setPulseTempo
@@ -18,8 +18,19 @@ import {
 export default {
   music: `${MusicFileNames['DDRKirby(ISQ) - Illumination Reel-IntroShortened']}.mp3`,
   markers: Markers,
-  onStart: () => {
-    
+  onStart: (conductor) => {
+    conductor.registerRecurringEvent(
+      () => {
+        SceneManager.animation.registerAnimation(
+          setPulseTempo(
+            conductor,
+            root.loader.resources[PulseBarNames.PulseBarPulseSprite].spritesheet.animations.pulse
+          )
+        );
+      },
+      () => conductor.beats >= conductor.markers.length - 2,
+      1
+    );
   },
   events: {
     .428: {
@@ -29,7 +40,6 @@ export default {
         for (let gooName in goo) {
           assetObj[gooName] = goo[gooName].asset.assets[GooNames.GooSprite].asset;
         }
-        let pulseTextures = root.loader.resources[PulseBarNames.PulseBarPulseSprite].spritesheet.animations.pulse;
         conductor.registerRecurringEvent(
           () => {
             SceneManager.animation.registerAnimation(
@@ -38,19 +48,7 @@ export default {
                 assetObj,
                 root.loader.resources[GooNames.GooSprite].spritesheet.animations[GooNames.Animations.GooIdle],
                 .03,
-                10
-              )
-            );
-          },
-          () => conductor.beats >= conductor.markers.length - 1,
-          1
-        );
-        conductor.registerRecurringEvent(
-          () => {
-            SceneManager.animation.registerAnimation(
-              setPulseTempo(
-                conductor,
-                pulseTextures
+                9
               )
             );
           },

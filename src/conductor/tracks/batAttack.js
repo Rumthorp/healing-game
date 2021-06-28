@@ -2,14 +2,14 @@ import Markers from './markers/DDRKirby(ISQ) - Enter the Vault_IntroShortened';
 import {
   SceneManager,
   root
-} from '../../../../app';
+} from '../../app';
 import {
   SceneNames,
   ComponentNames,
   GooNames,
   PulseBarNames,
   MusicFileNames
-} from '../../../../static/names';
+} from '../../static/names';
 import {
   setGooTempo,
   setPulseTempo
@@ -39,7 +39,7 @@ export default {
                 assetObj,
                 gooTextures,
                 .03,
-                10
+                9
               )
             );
           },

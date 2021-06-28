@@ -25,7 +25,10 @@ const loadAllResources = () => {
   .add(Names.MainMenuNames.NewGameButton, '../../assets/images/menus/MainMenuNewGame.png')
 
   //backgrounds
-  .add(Names.GodZoneNames.GodZoneBackground, '../../assets/images/backgrounds/GodZoneBackground.png');
+  .add(Names.GodZoneNames.GodZoneBackground, '../../assets/images/backgrounds/GodZoneBackground.png')
+
+  //fonts
+  .add(Names.FontNames.ArialBlack, '../../assets/images/fonts/Arial Black.fnt')
 
   root.loader.onComplete.add(() => SceneManager.startGame());
 

@@ -25,7 +25,7 @@ export default class GodZone extends ComponentClass {
       'sprite', 
       {
         name: 'test',
-        width: Constants.GodZoneWidth + 10,
+        width: Constants.GodZoneWidth + 20,
         height: Constants.AppHeight
       },
       true,

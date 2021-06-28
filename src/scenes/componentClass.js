@@ -54,13 +54,10 @@ export default class extends PIXI.Container {
 
   createAsset(type, assetData, addAsset, texture) {
     let asset;
-    if (type === 'sprite') {
-      asset = new PIXI.Sprite.from(texture);
-    }
-    if (type === 'component') {
-      asset = assetData;
-    }
-    if (type === 'sprite') {
+    if (type === 'sprite') asset = new PIXI.Sprite.from(texture);
+    if (type === 'component') asset = assetData;
+    if (type === 'text') asset = new PIXI.BitmapText('', { fontName: assetData.fontName });
+    if (type === 'sprite' || type === 'text') {
       for (let propertyName in assetData) {
         if (typeof assetData[propertyName] === 'function') {
           let props = assetData[propertyName]();
@@ -72,8 +69,7 @@ export default class extends PIXI.Container {
     }
     this.assets[assetData.name] = {
       asset,
-      type,
-      active: false
+      type
     }
     if (addAsset) {
       this.addAsset(assetData.name);

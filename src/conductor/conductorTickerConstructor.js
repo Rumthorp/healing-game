@@ -1,11 +1,10 @@
-import { ConductorNames } from '../../../static/names';
+import { ConductorNames } from '../static/names';
 
 export default (conductor) => {
   let nextBeat = conductor.markers[conductor.beats];
   return () => {
     let progress = conductor.music.seek();
     if (progress >= nextBeat) {
-      console.log(nextBeat, progress)
       if (conductor.events[nextBeat]) {
         conductor.events[nextBeat].event(conductor);
       }
@@ -25,6 +24,10 @@ export default (conductor) => {
       }
       conductor.beats ++;
       nextBeat = conductor.markers[conductor.beats];
+      if (!conductor.start) {
+        conductor.onStart();
+        conductor.start = true;
+      }
     }
     if (conductor.markers.length <= conductor.beats) {
       conductor.stopTicker(ConductorNames.ConductorTicker);
