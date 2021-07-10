@@ -1,6 +1,6 @@
 import { SceneManager } from '../../app';
 import ComponentClass from '../componentClass';
-import GooGrid from './gooGrid/gooGridComponent';
+import ActionZone from './actionZone/actionZone';
 import GodZone from './godZone/godZone';
 import {
   SceneNames,
@@ -14,10 +14,9 @@ import IrishFair from '../../conductor/tracks/irishFair';
 export default class BattleScene extends ComponentClass {
   constructor() {
     super(SceneNames.Battle);
-    this.battleData = {};
+    SceneManager.conductor.loadTrack(BatAttack, .3);
+    this.createAsset('component', new ActionZone(), true);
     this.createAsset('component', new GodZone(), true);
-    this.createAsset('component', new GooGrid(), true);
-    SceneManager.conductor.loadTrack(IrishFair, .3);
     SceneManager.conductor.start();
   }
 };

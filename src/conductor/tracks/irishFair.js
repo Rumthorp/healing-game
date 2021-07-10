@@ -72,7 +72,7 @@ export default {
                 assetObj,
                 root.loader.resources[GooNames.GooSprite].spritesheet.animations[GooNames.Animations.GooLeap],
                 .05,
-                6
+                5
               )
             );
           },

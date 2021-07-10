@@ -11,13 +11,14 @@ export const ComponentNames = {
   GodBox: 'GodBox',
   PulseBar: 'PulseBar',
   RhythmBar: 'RhythmBar',
-  SpellBar: 'SpellBar',
-  SpellButton: 'SpellButton',
+  SkillBar: 'SkillBar',
+  SkillButton: 'SkillButton',
   Conductor: 'Conductor',
   AnimationManager: 'AnimationManager',
   SkillManager: 'SkillManager',
   HealthManager: 'HealthManager',
-  EffectManager: 'EffectManager'
+  EffectManager: 'EffectManager',
+  ActionZone: 'ActionZone'
 };
 
 export const MainMenuNames = {
@@ -26,7 +27,8 @@ export const MainMenuNames = {
 };
 
 export const GodZoneNames = {
-  GodZoneBackground: 'GodZoneBackground'
+  GodZoneBackground: 'GodZoneBackground',
+  GodZoneBackgroundMask: 'GodZoneBackgroundMask'
 };
 
 export const GooNames = {
@@ -43,34 +45,40 @@ export const GooNames = {
   }
 };
 
-export const IconNames = {
-  ChainHealIcon: 'ChainHealIcon',
-  FastHealIcon: 'FastHealIcon',
-  HealOverTimeIcon: 'HealOverTimeIcon',
-  MeditateIcon: 'MeditateIcon',
-  LargeHealIcon: 'LargeHealIcon'
-};
-
 export const SkillNames = {
   ChainHeal: {
     name: 'ChainHeal',
-    displayName: 'Chain Heal'
+    displayName: 'Chain Heal',
+    iconName: 'ChainHealIcon'
   },
   FastHeal: {
     name: 'FastHeal',
-    displayName: 'Fast Heal'
+    displayName: 'Fast Heal',
+    iconName: 'FastHealIcon',
+    animationName: 'FastHealAnimation'
   },
   HealOverTime: {
     name: 'HealOverTime',
-    displayName: 'Heal Over Time'
+    displayName: 'Heal Over Time',
+    iconName: 'HealOverTimeIcon',
+    animationName: 'HealOverTimeAnimation'
   },
   Meditate: {
     name: 'Meditate',
-    displayName: 'Meditate'
+    displayName: 'Meditate',
+    iconName: 'MeditateIcon'
   },
   LargeHeal: {
     name: 'LargeHeal',
-    displayName: 'Large Heal'
+    displayName: 'Large Heal',
+    iconName: 'LargeHealIcon',
+    animationName: 'LargeHealAnimation'
+  },
+  Shield: {
+    name: 'Shield',
+    displayName: 'Shield',
+    iconName: 'ShieldIcon',
+    animationName: 'ShieldAnimation'
   }
 };
 
@@ -103,4 +111,32 @@ export const MusicFileNames = {
 
 export const FontNames = {
   ArialBlack: 'Arial Black'
+};
+
+export const RhythmBarNames = {
+  RhythmBarCircleSprite: 'RhythmBarCircleSprite',
+  RhythmBarCircleSpriteOutline: 'RhythmBarCircleSpriteOutline',
+  RhythmBarMeterOutlineSprite: 'RhythmBarMeterOutlineSprite',
+  RhythmBarMeterSprite: 'RhythmBarMeterSprite',
+  RhythmBarMeterAfterImageSprite: 'RhythmBarMeterAfterImageSprite',
+  RhythmBarMeterConsumptionSprite: 'RhythmBarMeterConsumptionSprite',
+  RhythmBarMeterBackgroundSprite: 'RhythmBarMeterBackgroundSprite',
+  RhythmBarText: 'RhythmBarText',
+  RhythmBarTicker: 'RhythmBarTicker'
+}
+
+export const HealthBarNames = {
+  HealthBarLifeCircleSprite: 'HealthBarLifeCircleSprite',
+  HealthBarLifeCircleSpriteOutline: 'HealthBarLifeCircleSpriteOutline',
+  HealthBarShieldCircleSprite: 'HealthBarShieldCircleSprite',
+  HealthBarShieldCircleSpriteOutline: 'HealthBarShieldCircleSpriteOutline',
+  HeathBarLifeAndShieldBarSprite: 'HeathBarLifeAndShieldBarSprite',
+  HealthBarMeterSprite: 'HealthBarMeterSprite'
+};
+
+export const AreaNames = {
+  'Catacombs-Bottom-1': 'Catacombs-Bottom-1',
+  'Catacombs-Bottom-2': 'Catacombs-Bottom-2',
+  'Catacombs-Bottom-3': 'Catacombs-Bottom-3',
+  'Catacombs-Top-1': 'Catacombs-Top-1'
 };

@@ -38,8 +38,9 @@ export default {
                 conductor,
                 assetObj,
                 gooTextures,
-                .03,
-                9
+                .035,
+                10,
+                true
               )
             );
           },

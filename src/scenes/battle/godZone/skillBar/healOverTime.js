@@ -1,10 +1,10 @@
 import {
-  SkillNames,
-  IconNames
+  SkillNames
 } from '../../../../static/names';
 
 export default {
   name: SkillNames.HealOverTime.name,
   displayName: SkillNames.HealOverTime.displayName,
-  icon: IconNames.HealOverTimeIcon
+  iconName: SkillNames.HealOverTime.iconName,
+  rhythmCost: 10
 };

@@ -35,21 +35,22 @@ const GooHeartPositions = (() => {
   return positions;
 })();
 const GodZoneWidth = 390;
-const GodZoneSpellButtonPadding = 5;
-const GodZoneSpellButtonWidth = (GodZoneWidth - (GodZoneSpellButtonPadding * 2)) / 3;
-const GodZoneSpellPositions = (() => {
+const GodZoneSkillButtonPadding = 5;
+const GodZoneSkillButtonWidth = (GodZoneWidth - (GodZoneSkillButtonPadding * 2)) / 3;
+const GodZoneSkillPositions = (() => {
   let positions = [];
   for (let row = 1; row < 4; row ++) {
     positions.push([]);
     for (let column = 1; column < 4; column ++) {
       let positionObj = {};
-      positionObj.x = (((column - 1) * GodZoneSpellButtonWidth) + ((column - 1) * GodZoneSpellButtonPadding));
-      positionObj.y = AppHeight - ((row * GodZoneSpellButtonWidth) + (row * GodZoneSpellButtonPadding));
+      positionObj.x = (((column - 1) * GodZoneSkillButtonWidth) + ((column - 1) * GodZoneSkillButtonPadding));
+      positionObj.y = AppHeight - ((row * GodZoneSkillButtonWidth) + (row * GodZoneSkillButtonPadding));
       positions[row - 1].push(positionObj);
     }
   }
   return positions;
 })();
+const RhythmMeterMaxHeight = 183;
 
 export const Constants = {
   AppWidth,
@@ -66,9 +67,7 @@ export const Constants = {
   GooHeartPositions,
   GooGridPositions,
   GodZoneWidth,
-  GodZoneSpellButtonWidth,
-  GodZoneSpellPositions
+  GodZoneSkillButtonWidth,
+  GodZoneSkillPositions,
+  RhythmMeterMaxHeight
 };
-
-
-

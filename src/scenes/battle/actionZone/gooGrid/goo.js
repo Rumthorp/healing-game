@@ -1,15 +1,15 @@
 import { 
   root,
   SceneManager
-} from '../../../app';
-import ComponentClass from '../../componentClass';
-import { Constants } from '../../../static/constants';
+} from '../../../../app';
+import ComponentClass from '../../../componentClass';
+import { Constants } from '../../../../static/constants';
 import {
   ComponentNames,
   GooNames
-} from '../../../static/names';
+} from '../../../../static/names';
 
-export default class GooComponent extends ComponentClass {
+export default class Goo extends ComponentClass {
   constructor(rowIndex, columnIndex) {
     super(`${ComponentNames.Goo}-${rowIndex}-${columnIndex}`);
     this.rowIndex = rowIndex;

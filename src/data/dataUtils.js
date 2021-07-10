@@ -19,7 +19,7 @@ export const generateInitialGooState = (maxHealth) => {
 export const generateInitialSkillState = (skillArray) => {
   const skills = [];
   let counter = 0;
-  Constants.GodZoneSpellPositions.forEach((rowArray, rowIndex) => {
+  Constants.GodZoneSkillPositions.forEach((rowArray, rowIndex) => {
     skills.push([]);
     rowArray.forEach((positionObj, index) => {
       let skillName = skillArray[counter];

@@ -14,14 +14,13 @@ export const setGooTempo = (conductor, assets, animationTextures, animationSpeed
         for (let assetName in this.assets) {
           this.assets[assetName].texture = this.data.animationTextures[this.data.animationProgress];
         }
-        if (this.data.animationProgress === this.data.animationClimaxIndex) console.log(time, conductor.markers[conductor.beats])
         if (this.data.animationProgress === animationTextures.length - 1) this.done = true;
         this.data.animationProgress ++;
         return;
       }
     },
     onDone() {
-      if (resetOnDone) {
+      if (this.data.resetOnDone) {
         for (let assetName in this.assets) {
           this.assets[assetName].texture = this.data.animationTextures[0];
         }
@@ -35,7 +34,8 @@ export const setGooTempo = (conductor, assets, animationTextures, animationSpeed
       animationProgress: 0,
       animationTextures,
       animationSpeed,
-      animationClimaxIndex
+      animationClimaxIndex,
+      resetOnDone
     }
   }
 };
@@ -53,8 +53,8 @@ export const setPulseTempo = (conductor, pulseTextures) => {
           name: name,
           x: 0,
           y: 90,
-          width: 400,
-          height: 400
+          width: 390,
+          height: 390
         },
         false,
         pulseTextures[0]

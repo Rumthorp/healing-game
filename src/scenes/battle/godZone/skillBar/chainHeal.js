@@ -1,10 +1,10 @@
 import {
-  SkillNames,
-  IconNames
+  SkillNames
 } from '../../../../static/names';
 
 export default {
   name: SkillNames.ChainHeal.name,
   displayName: SkillNames.ChainHeal.displayName,
-  icon: IconNames.ChainHealIcon
+  iconName: SkillNames.ChainHeal.iconName,
+  rhythmCost: 10
 };
