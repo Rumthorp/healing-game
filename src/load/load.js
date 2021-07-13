@@ -11,7 +11,7 @@ const loadAllResources = () => {
   root.loader
   //animations
   .add(Names.GooNames.GooBox, '../../assets/images/animations/goo/GooBox.png')
-  .add(Names.GooNames.GooHeart, '../../assets/images/animations/goo/GooHeart.json')
+ 
   .add(Names.GooNames.GooSprite, '../../assets/images/animations/goo/Goo.json')
   .add(Names.FoeNames.EvilEye, '../../assets/images/animations/foes/evilEye/EvilEye.json')
   .add(Names.PulseBarNames.PulseBarPulseSprite, '../../assets/images/animations/pulse/pulse.json')
@@ -31,6 +31,9 @@ const loadAllResources = () => {
   .add(Names.HealthBarNames.HealthBarShieldCircleSpriteOutline, '../../assets/images/interface/healthBar/HealthBarShieldCircleSpriteOutline.png')
   .add(Names.HealthBarNames.HeathBarLifeAndShieldBarSprite, '../../assets/images/interface/healthBar/HeathBarLifeAndShieldBarSprite.png')
   .add(Names.HealthBarNames.HealthBarMeterSprite, '../../assets/images/interface/healthBar/HealthBarMeterSprite.png')
+  .add(Names.HealthBarNames.HealthBarHeartIcon, '../../assets/images/interface/healthBar/HealthBarHeartIcon.json')
+  .add(Names.HealthBarNames.HealthBarShieldIcon, '../../assets/images/interface/healthBar/HealthBarShieldIcon.png')
+  .add(Names.HealthBarNames.HealthBarShieldIconOutline, '../../assets/images/interface/healthBar/HealthBarShieldIconOutline.png')
   
   //icons
   .add(Names.SkillNames.ChainHeal.iconName, '../../assets/images/icons/ChainHealIcon.png')

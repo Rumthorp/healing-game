@@ -18,7 +18,8 @@ export const ComponentNames = {
   SkillManager: 'SkillManager',
   HealthManager: 'HealthManager',
   EffectManager: 'EffectManager',
-  ActionZone: 'ActionZone'
+  ActionZone: 'ActionZone',
+  HealthBar: 'HealthBar'
 };
 
 export const MainMenuNames = {
@@ -35,7 +36,6 @@ export const GooNames = {
   GooComponent: 'GooComponent',
   GooSprite: 'GooSprite',
   GooBox: 'GooBox',
-  GooHeart: 'GooHeart',
   Animations: {
     GooDeath: 'GooDeath',
     GooHit: 'GooHit',
@@ -131,7 +131,12 @@ export const HealthBarNames = {
   HealthBarShieldCircleSprite: 'HealthBarShieldCircleSprite',
   HealthBarShieldCircleSpriteOutline: 'HealthBarShieldCircleSpriteOutline',
   HeathBarLifeAndShieldBarSprite: 'HeathBarLifeAndShieldBarSprite',
-  HealthBarMeterSprite: 'HealthBarMeterSprite'
+  HealthBarMeterSprite: 'HealthBarMeterSprite',
+  HealthBarHeartIcon: 'HealthBarHeartIcon',
+  HealthBarShieldIcon: 'HealthBarShieldIcon',
+  HealthBarShieldIconOutline: 'HealthBarShieldIconOutline',
+  HealthBarHealthText: 'HealthBarHealthText',
+  HealthBarShieldText: 'HealthBarShieldText'
 };
 
 export const AreaNames = {

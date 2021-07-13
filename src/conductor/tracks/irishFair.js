@@ -36,7 +36,8 @@ export default {
     .23: {
       event: (conductor) => {
         let assetObj = {};
-        let goo = SceneManager.getChildByName(SceneNames.Battle).getChildByName(ComponentNames.GooGrid).assets
+        let goo = SceneManager.getChildByName(ComponentNames.GooGrid, true).assets;
+        let gooTextures = root.loader.resources[GooNames.GooSprite].spritesheet.animations[GooNames.Animations.GooIdle]
         for (let gooName in goo) {
           assetObj[gooName] = goo[gooName].asset.assets[GooNames.GooSprite].asset;
         }
@@ -46,7 +47,7 @@ export default {
               setGooTempo(
                 conductor,
                 assetObj,
-                root.loader.resources[GooNames.GooSprite].spritesheet.animations[GooNames.Animations.GooIdle],
+                gooTextures,
                 .05,
                 9
               )
@@ -60,7 +61,8 @@ export default {
     .71: {
       event: (conductor) => {
         let assetObj = {};
-        let goo = SceneManager.getChildByName(SceneNames.Battle).getChildByName(ComponentNames.GooGrid).assets
+        let goo = SceneManager.getChildByName(ComponentNames.GooGrid, true).assets;
+        let gooTextures = root.loader.resources[GooNames.GooSprite].spritesheet.animations[GooNames.Animations.GooLeap]
         for (let gooName in goo) {
           assetObj[gooName] = goo[gooName].asset.assets[GooNames.GooSprite].asset;
         }
@@ -70,7 +72,7 @@ export default {
               setGooTempo(
                 conductor,
                 assetObj,
-                root.loader.resources[GooNames.GooSprite].spritesheet.animations[GooNames.Animations.GooLeap],
+                gooTextures,
                 .05,
                 5
               )

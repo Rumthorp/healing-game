@@ -4,7 +4,6 @@ import {
   SceneManager
 } from '../../app';
 import ComponentClass from '../componentClass';
-import { buildMainMenuTicker } from './mainMenuTickers';
 import {
   SceneNames,
   MainMenuNames,
@@ -33,8 +32,5 @@ export default class MainMenuScene extends ComponentClass{
     this.assets[MainMenuNames.NewGameButton].asset.on('click', () => {
       SceneManager.changeScene([SceneNames.Battle], true)
     });
-    
-    this.createTicker(buildMainMenuTicker, MainMenuNames.Ticker1);
-    this.startTicker(MainMenuNames.Ticker1);
   }
 }

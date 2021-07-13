@@ -18,8 +18,19 @@ import {
 export default {
   music: `${MusicFileNames['DDRKirby(ISQ) - Enter the Vault_IntroShortened']}.mp3`,
   markers: Markers,
-  onStart: () => {
-    
+  onStart: (conductor) => {
+    conductor.registerRecurringEvent(
+      () => {
+        SceneManager.animation.registerAnimation(
+          setPulseTempo(
+            conductor,
+            pulseTextures
+          )
+        );
+      },
+      () => conductor.beats >= conductor.markers.length - 2,
+      1
+    );
   },
   events: {
     .375: {
@@ -41,18 +52,6 @@ export default {
                 .035,
                 10,
                 true
-              )
-            );
-          },
-          () => conductor.beats >= conductor.markers.length - 1,
-          1
-        );
-        conductor.registerRecurringEvent(
-          () => {
-            SceneManager.animation.registerAnimation(
-              setPulseTempo(
-                conductor,
-                pulseTextures
               )
             );
           },
