@@ -14,7 +14,7 @@ import IrishFair from '../../conductor/tracks/irishFair';
 export default class BattleScene extends ComponentClass {
   constructor() {
     super(SceneNames.Battle);
-    SceneManager.conductor.loadTrack(IrishFair, .3);
+    SceneManager.conductor.loadTrack(GoblinAttack, .3);
     this.createAsset('component', new ActionZone(), true);
     this.createAsset('component', new GodZone(), true);
     SceneManager.conductor.start();

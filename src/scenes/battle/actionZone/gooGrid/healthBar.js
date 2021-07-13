@@ -91,7 +91,7 @@ export default class gooBar extends ComponentClass {
         anchor: [.5, .5],
         x: 27,
         y: 37,
-        text: 999
+        text: 99
       },
       true
     );

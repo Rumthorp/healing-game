@@ -74,7 +74,7 @@ export default {
                 assetObj,
                 gooTextures,
                 .05,
-                5
+                6,
               )
             );
           },
