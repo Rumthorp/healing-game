@@ -1,9 +1,8 @@
+import { SceneManager } from '../app';
 import { Howl, Howler } from 'howler';
 import Component from '../scenes/componentClass';
-import conductorTickerConstructor from './conductorTickerConstructor';
 import { 
-  ComponentNames,
-  ConductorNames
+  ComponentNames
 } from '../static/names';
 
 class Conductor extends Component{
@@ -17,7 +16,9 @@ class Conductor extends Component{
     this.music = new Howl({
       src: [`../../../../assets/sound/music/${track.music}`]
     });
-    this.beats = 0;
+    this.progress = 0;
+    this.previousBeat = 0;
+    this.currentBeat = 0;
     this.music.volume(volume);
     this.markers = track.markers;
     this.events = track.events;
@@ -26,8 +27,7 @@ class Conductor extends Component{
   }
 
   start() {
-    this.createTicker(conductorTickerConstructor, ConductorNames.ConductorTicker, this);
-    this.startTicker(ConductorNames.ConductorTicker);
+    SceneManager.tickerMetaData[ComponentNames.Conductor].active = true;
     this.music.play();
     this?.trackOnStart(this);
     this.trackStarted = true;

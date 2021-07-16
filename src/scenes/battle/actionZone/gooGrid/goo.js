@@ -8,7 +8,8 @@ import {
   ComponentNames,
   GooNames
 } from '../../../../static/names';
-import GooBar from './healthBar';
+import HealthCircle from './HealthCircle';
+import ShieldCircle from './ShieldCircle';
 
 export default class Goo extends ComponentClass {
   constructor(rowIndex, columnIndex) {
@@ -17,20 +18,29 @@ export default class Goo extends ComponentClass {
     this.columnIndex = columnIndex;
     this.x = Constants.GooGridPositions[rowIndex][columnIndex].x;
     this.y = Constants.GooGridPositions[rowIndex][columnIndex].y;
+    const gooData = SceneManager.data.goo[rowIndex][columnIndex];
+    this.interactive = true;
+    this.buttonMode = true;
     this.createAsset(
       'sprite', 
       {
         name: GooNames.GooBox,
         width: Constants.GooBoxSize,
-        height: Constants.GooBoxSize
+        height: Constants.GooBoxSize,
+        alpha: 0
       },
       true,
       root.loader.resources[GooNames.GooBox].texture,
     )
+    this.createAsset(
+      'component',
+      new ShieldCircle(rowIndex, columnIndex, gooData.shield),
+      true
+    )
     .visible = false;
     this.createAsset(
       'component',
-      new GooBar(rowIndex, columnIndex),
+      new HealthCircle(rowIndex, columnIndex, gooData.currentHealth),
       true
     );
     let goo = this.createAsset(

@@ -28,7 +28,7 @@ export default {
           )
         );
       },
-      () => conductor.beats >= conductor.markers.length - 2,
+      () => conductor.currentBeat >= conductor.markers.length - 2,
       1
     );
   },
@@ -53,7 +53,7 @@ export default {
               )
             );
           },
-          () => conductor.beats >= conductor.markers.length - 1,
+          () => conductor.currentBeat >= conductor.markers.length - 1,
           2
         );
       }
@@ -78,7 +78,7 @@ export default {
               )
             );
           },
-          () => conductor.beats >= conductor.markers.length - 1,
+          () => conductor.currentBeat >= conductor.markers.length - 1,
           2
         );
       }

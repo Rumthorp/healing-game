@@ -8,7 +8,8 @@ export const generateInitialGooState = (maxHealth) => {
       goo[rowIndex].push(
         {
           currentHealth: maxHealth,
-          maxHealth
+          maxHealth,
+          shield: 0
         }
       );
     });

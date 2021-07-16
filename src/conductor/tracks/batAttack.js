@@ -21,14 +21,9 @@ export default {
   onStart: (conductor) => {
     conductor.registerRecurringEvent(
       () => {
-        SceneManager.animation.registerAnimation(
-          setPulseTempo(
-            conductor,
-            pulseTextures
-          )
-        );
+        SceneManager.animation.registerAnimation(setPulseTempo());
       },
-      () => conductor.beats >= conductor.markers.length - 2,
+      () => conductor.currentBeat >= conductor.markers.length - 2,
       1
     );
   },
@@ -55,7 +50,7 @@ export default {
               )
             );
           },
-          () => conductor.beats >= conductor.markers.length - 1,
+          () => conductor.currentBeat >= conductor.markers.length - 1,
           1
         );
       }

@@ -6,50 +6,7 @@ export default class extends PIXI.Container {
   constructor(componentName) {
     super();
     this.assets = {};
-    this.tickers = {};
     this.name = componentName;
-  }
-
-  createTicker(tickerConstructor, tickerName) {
-    let args = [...arguments];
-    let passArgs = false;
-    if (args.length > 2) {
-      args.splice(0, 2);
-      passArgs = true;
-    }
-    this.tickers[tickerName] = {
-      active: false,
-      ticker: passArgs ? tickerConstructor(...args) : tickerConstructor()
-    }
-  }
-
-  startTicker(tickerName) {
-    this.tickers[tickerName].active = true;
-    root.ticker.add(this.tickers[tickerName].ticker);
-  }
-
-  refreshTicker(tickerConstructor, tickerName) {
-    if (this.tickers[tickerName].active) {
-      root.ticker.remove(this.tickers[tickerName]);
-      this.tickers[tickerName].ticker = tickerConstructor();
-      root.ticker.add(this.tickers[tickerName].ticker);
-    }
-  }
-
-  stopTicker(tickerName) {
-    root.ticker.remove(this.tickers[tickerName].ticker);
-    this.tickers[tickerName].active = false;
-  }
-
-  stopAllTickers() {
-    for (let tickerName in this.tickers) {
-      if (this.tickers[tickerName].active) this.stopTicker(tickerName);
-    }
-  }
-
-  deleteTicker(tickerName) {
-    root.ticker.remove(this.tickers[tickerName].ticker);
-    delete this.tickers[tickerName];
   }
 
   createAsset(type, assetData, addAsset, texture) {
@@ -90,8 +47,7 @@ export default class extends PIXI.Container {
     this.assets[name].asset.active = true;
   }
 
-  removeAsset(name, stopTickers, recursive) {
-    if (stopTickers) this.stopAllTickers();
+  removeAsset(name, recursive) {
     if (recursive) {
       for (let assetName in this.assets) {
         if (this.assets[assetName].type === 'component') this.assets[assetName].asset.removeAsset(null, true, true);

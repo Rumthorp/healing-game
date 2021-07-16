@@ -8,9 +8,10 @@ import MainMenuScene from './mainMenu/mainMenuScene';
 import BattleScene from './battle/battleScene';
 import {
   SceneNames,
-  AnimationManagerNames
+  ComponentNames
 } from '../static/names';
 import { Constants } from '../static/constants';
+import tickerConstructor from './tickerConstructor';
 
 export default class SceneManager extends ComponentClass {
   constructor () {
@@ -18,7 +19,10 @@ export default class SceneManager extends ComponentClass {
     this.data = createInitialState();
     this.conductor = new Conductor();
     this.animation = new AnimationManager();
-    this.animation.startTicker(AnimationManagerNames.AnimationManagerTicker);
+    this.tickerMetaData = {};
+    this.tickerMetaData[ComponentNames.RhythmBar] = { beatUpdated: false, active: false };
+    this.tickerMetaData[ComponentNames.Conductor] = { beatUpdated: false, active: false };
+    this.tickerMetaData[ComponentNames.AnimationManager] = { beatUpdated: false, active: true };
   }
 
   loadResources() {
@@ -50,6 +54,8 @@ export default class SceneManager extends ComponentClass {
 
   startGame() {
     this.createAsset('component', new MainMenuScene(), true);
+    let ticker = tickerConstructor();
+    root.ticker.add(ticker);
     root.ticker.start();
     console.log(root);
   }

@@ -22,6 +22,16 @@ const GooGridPositions = (() => {
   }
   return positions;
 })();
+const GooVitalsCircleSize = 50;
+const GooVitalsCircleX = GooBoxSize / 2;
+const GooVitalsCircleY = (GooVitalsCircleSize / 2) + GooBoxPadding;
+const GooVitalsHeartIconSize = 23;
+const GooVitalsHeartIconY = ((GooVitalsHeartIconSize / 2) + GooBoxPadding) + 3;
+const GooVitalsShieldIconY = ((GooVitalsHeartIconSize / 2) + GooBoxPadding) + 2;
+const GooVitalsShieldIconSize = 26;
+const GooVitalsTextSize = 18;
+const GooVitalsTextX = GooVitalsCircleX - 1;
+const GooVitalsTextY = 38.5;
 const GodZoneWidth = 390;
 const GodZoneSkillButtonPadding = 5;
 const GodZoneSkillButtonWidth = (GodZoneWidth - (GodZoneSkillButtonPadding * 2)) / 3;
@@ -51,6 +61,16 @@ export const Constants = {
   SideAreaSize,
   GooScale,
   GooGridPositions,
+  GooVitalsCircleSize,
+  GooVitalsCircleX,
+  GooVitalsCircleY,
+  GooVitalsHeartIconSize,
+  GooVitalsHeartIconY,
+  GooVitalsShieldIconY,
+  GooVitalsShieldIconSize,
+  GooVitalsTextSize,
+  GooVitalsTextX,
+  GooVitalsTextY,
   GodZoneWidth,
   GodZoneSkillButtonWidth,
   GodZoneSkillPositions,

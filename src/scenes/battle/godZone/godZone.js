@@ -58,6 +58,5 @@ export default class GodZone extends ComponentClass {
       new RhythmBar(),
       true
     );
-    this.assets[ComponentNames.RhythmBar].asset.start();
   }
 };

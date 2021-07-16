@@ -23,7 +23,6 @@ export const getSkillByName = (name) => {
 
 export const addSkillToQueue = (name) => {
   const skill = getSkillByName(name);
-  SceneManager.data
   if (SceneManager.data.currentRhythm < skill.rhythmCost) return;
   if (SceneManager.data.skillQueue.length >= 2) return;
   SceneManager.data.currentRhythm -= skill.rhythmCost;

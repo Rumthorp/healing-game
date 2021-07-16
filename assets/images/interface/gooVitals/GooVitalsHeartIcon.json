@@ -1,6 +1,6 @@
 {"frames": {
 
-"HealthBarHeartIcon_0.png":
+"GooVitalsHeartIcon_0.png":
 {
 	"frame": {"x":0,"y":0,"w":200,"h":200},
 	"rotated": false,
@@ -8,7 +8,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
 	"sourceSize": {"w":200,"h":200}
 },
-"HealthBarHeartIcon_1.png":
+"GooVitalsHeartIcon_1.png":
 {
 	"frame": {"x":200,"y":0,"w":200,"h":200},
 	"rotated": false,
@@ -16,7 +16,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
 	"sourceSize": {"w":200,"h":200}
 },
-"HealthBarHeartIcon_2.png":
+"GooVitalsHeartIcon_2.png":
 {
 	"frame": {"x":400,"y":0,"w":200,"h":200},
 	"rotated": false,
@@ -24,7 +24,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
 	"sourceSize": {"w":200,"h":200}
 },
-"HealthBarHeartIcon_3.png":
+"GooVitalsHeartIcon_3.png":
 {
 	"frame": {"x":600,"y":0,"w":200,"h":200},
 	"rotated": false,
@@ -32,7 +32,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
 	"sourceSize": {"w":200,"h":200}
 },
-"HealthBarHeartIcon_4.png":
+"GooVitalsHeartIcon_4.png":
 {
 	"frame": {"x":800,"y":0,"w":200,"h":200},
 	"rotated": false,
@@ -41,12 +41,12 @@
 	"sourceSize": {"w":200,"h":200}
 }},
 "animations": {
-	"HealthBarHeartIcon": ["HealthBarHeartIcon_0.png","HealthBarHeartIcon_1.png","HealthBarHeartIcon_2.png","HealthBarHeartIcon_3.png","HealthBarHeartIcon_4.png"]
+	"GooVitalsHeartIcon": ["GooVitalsHeartIcon_0.png","GooVitalsHeartIcon_1.png","GooVitalsHeartIcon_2.png","GooVitalsHeartIcon_3.png","GooVitalsHeartIcon_4.png"]
 },
 "meta": {
 	"app": "https://www.codeandweb.com/texturepacker",
 	"version": "1.0",
-	"image": "HealthBarHeartIcon.png",
+	"image": "GooVitalsHeartIcon.png",
 	"format": "RGBA8888",
 	"size": {"w":1000,"h":200},
 	"scale": "1",

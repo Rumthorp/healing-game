@@ -15,16 +15,12 @@ export const ComponentNames = {
   SkillButton: 'SkillButton',
   Conductor: 'Conductor',
   AnimationManager: 'AnimationManager',
-  SkillManager: 'SkillManager',
-  HealthManager: 'HealthManager',
-  EffectManager: 'EffectManager',
   ActionZone: 'ActionZone',
-  HealthBar: 'HealthBar'
+  HealthGlobe: 'HealthGlobe'
 };
 
 export const MainMenuNames = {
-  NewGameButton: 'NewGameButton',
-  Ticker1: 'Ticker1'
+  NewGameButton: 'NewGameButton'
 };
 
 export const GodZoneNames = {
@@ -86,17 +82,8 @@ export const FoeNames = {
   EvilEye: 'EvilEye'
 };
 
-export const ConductorNames = {
-  ConductorTicker: 'ConductorTicker'
-};
-
 export const PulseBarNames = {
-  PulseBarPulseSprite: 'PulseBarPulseSprite',
-  PulseBarTicker: 'PulseBarTicker'
-};
-
-export const AnimationManagerNames = {
-  AnimationManagerTicker: 'AnimationManagerTicker'
+  PulseBarPulseSprite: 'PulseBarPulseSprite'
 };
 
 export const TrackNames = {
@@ -121,22 +108,21 @@ export const RhythmBarNames = {
   RhythmBarMeterAfterImageSprite: 'RhythmBarMeterAfterImageSprite',
   RhythmBarMeterConsumptionSprite: 'RhythmBarMeterConsumptionSprite',
   RhythmBarMeterBackgroundSprite: 'RhythmBarMeterBackgroundSprite',
-  RhythmBarText: 'RhythmBarText',
-  RhythmBarTicker: 'RhythmBarTicker'
+  RhythmBarText: 'RhythmBarText'
 }
 
-export const HealthBarNames = {
-  HealthBarLifeCircleSprite: 'HealthBarLifeCircleSprite',
-  HealthBarLifeCircleSpriteOutline: 'HealthBarLifeCircleSpriteOutline',
-  HealthBarShieldCircleSprite: 'HealthBarShieldCircleSprite',
-  HealthBarShieldCircleSpriteOutline: 'HealthBarShieldCircleSpriteOutline',
-  HeathBarLifeAndShieldBarSprite: 'HeathBarLifeAndShieldBarSprite',
-  HealthBarMeterSprite: 'HealthBarMeterSprite',
-  HealthBarHeartIcon: 'HealthBarHeartIcon',
-  HealthBarShieldIcon: 'HealthBarShieldIcon',
-  HealthBarShieldIconOutline: 'HealthBarShieldIconOutline',
-  HealthBarHealthText: 'HealthBarHealthText',
-  HealthBarShieldText: 'HealthBarShieldText'
+export const GooVitalsNames = {
+  GooVitalsCircleSprite: 'GooVitalsCircleSprite',
+  GooVitalsCircleSpriteOutline: 'GooVitalsCircleSpriteOutline',
+  GooVitalsHealthCircleSprite: 'GooVitalsHealthCircleSprite',
+  GooVitalsHealthCircleSpriteOutline: 'GooVitalsHealthCircleSpriteOutline',
+  GooVitalsShieldCircleSprite: 'GooVitalsShieldCircleSprite',
+  GooVitalsShieldCircleSpriteOutline: 'GooVitalsShieldCircleSpriteOutline',
+  GooVitalsHeartIcon: 'GooVitalsHeartIcon',
+  GooVitalsShieldIcon: 'GooVitalsShieldIcon',
+  GooVitalsShieldIconOutline: 'GooVitalsShieldIconOutline',
+  GooVitalsHealthText: 'GooVitalsHealthText',
+  GooVitalsShieldText: 'GooVitalsShieldText'
 };
 
 export const AreaNames = {

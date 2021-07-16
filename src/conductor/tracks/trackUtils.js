@@ -1,4 +1,7 @@
-import { SceneManager } from '../../app';
+import {
+  root,
+  SceneManager
+} from '../../app';
 import {
   ComponentNames,
   GooNames,
@@ -8,9 +11,9 @@ import {
 export const setGooTempo = (conductor, assets, animationTextures, animationSpeed, animationClimaxIndex, resetOnDone) => {
   return {
     assets,
-    loop() {
-      let time = conductor.music.seek();
-      if (time >= this.data.animationStart + (this.data.animationSpeed * this.data.animationProgress)) {
+    loop(delta, progress) {
+      console.log('gooLoop')
+      if (progress >= this.data.animationStart + (this.data.animationSpeed * this.data.animationProgress)) {
         for (let assetName in this.assets) {
           this.assets[assetName].texture = this.data.animationTextures[this.data.animationProgress];
         }
@@ -30,7 +33,7 @@ export const setGooTempo = (conductor, assets, animationTextures, animationSpeed
     done: false,
     priority: 0,
     data: {
-      animationStart: conductor.markers[conductor.beats + 1] - (animationSpeed * animationClimaxIndex),
+      animationStart: conductor.markers[conductor.currentBeat + 1] - (animationSpeed * animationClimaxIndex),
       animationProgress: 0,
       animationTextures,
       animationSpeed,
@@ -40,12 +43,13 @@ export const setGooTempo = (conductor, assets, animationTextures, animationSpeed
   }
 };
 
-export const setPulseTempo = (conductor, pulseTextures) => {
+export const setPulseTempo = () => {
+  const pulseTextures = root.loader.resources[PulseBarNames.PulseBarPulseSprite].spritesheet.animations.pulse
   return {
     assets: {},
     start: false,
     onStart() {
-      let name = `${PulseBarNames.PulseBarPulseSprite}-${conductor.beats}`;
+      let name = `${PulseBarNames.PulseBarPulseSprite}-${SceneManager.conductor.currentBeat}`;
       this.data.assetName = name;
       this.assets[name] = this.data.pulseBarRef.createAsset(
         'sprite',
@@ -61,7 +65,7 @@ export const setPulseTempo = (conductor, pulseTextures) => {
       )
     },
     loop() {
-      let time = conductor.music.seek();
+      let time = SceneManager.conductor.music.seek();
       if (time >= this.data.animationStart + (this.data.animationSpeed * (this.data.animationProgress))) {
         if (this.data.animationProgress === 0) this.data.pulseBarRef.addAsset(this.data.assetName);
         this.assets[this.data.assetName].active = true;
@@ -76,7 +80,7 @@ export const setPulseTempo = (conductor, pulseTextures) => {
     done: false,
     priority: 0,
     data: {
-      animationStart: conductor.markers[conductor.beats + 2] - (.025 * 22),
+      animationStart: SceneManager.conductor.markers[SceneManager.conductor.currentBeat + 2] - (.025 * 22),
       animationSpeed: .025,
       animationProgress: 0,
       pulseBarRef: SceneManager.getChildByName(ComponentNames.PulseBar, true),

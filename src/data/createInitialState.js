@@ -6,7 +6,7 @@ import { SkillNames } from '../static/names'
 
 export default () => {
   const initialState = {};
-  initialState.goo = generateInitialGooState(19);
+  initialState.goo = generateInitialGooState(100);
   initialState.skills = generateInitialSkillState([
     SkillNames.FastHeal.displayName,
     SkillNames.LargeHeal.displayName,

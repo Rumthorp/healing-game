@@ -1,6 +1,5 @@
 import { SceneManager } from '../app';
 import { ComponentNames } from '../static/names';
-import animationManagerTicker from './animationManagerTicker';
 import Component from '../scenes/componentClass';
 import { AnimationManagerNames } from '../static/names';
 
@@ -10,7 +9,6 @@ class AnimationManager extends Component {
     this.animations = {};
     this.animationCounter = 0;
     this.priorityThreshhold = {};
-    this.createTicker(animationManagerTicker, AnimationManagerNames.AnimationManagerTicker, this);
   }
 
   registerAnimation(animation) {

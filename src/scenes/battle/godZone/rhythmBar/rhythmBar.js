@@ -9,7 +9,6 @@ import {
   FontNames
 } from '../../../../static/names';
 import { Constants } from '../../../../static/constants';
-import rhythmBarTickerConstructor from './rhythmBarTickerConstructor';
 import { getRhythmBarHeight } from './rhythmBarUtils';
 
 export default class RhythmBar extends ComponentClass {
@@ -80,14 +79,5 @@ export default class RhythmBar extends ComponentClass {
       },
       true
     );
-  }
-
-  start() {
-    this.createTicker(
-      rhythmBarTickerConstructor,
-      RhythmBarNames.RhythmBarTicker,
-      this
-    );
-    this.startTicker(RhythmBarNames.RhythmBarTicker)
   }
 }
