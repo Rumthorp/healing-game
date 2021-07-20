@@ -9,7 +9,7 @@ import {
   FontNames
 } from '../../../../static/names';
 import { Constants } from '../../../../static/constants';
-import { getRhythmBarHeight } from './rhythmBarUtils';
+import SpellQueueButton from './spellQueueButton';
 
 export default class RhythmBar extends ComponentClass {
   constructor() {
@@ -56,7 +56,7 @@ export default class RhythmBar extends ComponentClass {
     this.createAsset(
       'sprite',
       {
-        height: getRhythmBarHeight(SceneManager.data.currentRhythm, SceneManager.data.maxRhythm, Constants.RhythmMeterMaxHeight),
+        height: (SceneManager.data.currentRhythm / SceneManager.data.maxRhythm) * Constants.RhythmMeterMaxHeight,
         y: 192,
         x: 161,
         name: RhythmBarNames.RhythmBarMeterSprite,
@@ -79,5 +79,8 @@ export default class RhythmBar extends ComponentClass {
       },
       true
     );
+    for(let index = 0; index < 3; index++) {
+      this.createAsset('component', new SpellQueueButton(index), true);
+    }
   }
 }

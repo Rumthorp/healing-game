@@ -12,7 +12,6 @@ export const setGooTempo = (conductor, assets, animationTextures, animationSpeed
   return {
     assets,
     loop(delta, progress) {
-      console.log('gooLoop')
       if (progress >= this.data.animationStart + (this.data.animationSpeed * this.data.animationProgress)) {
         for (let assetName in this.assets) {
           this.assets[assetName].texture = this.data.animationTextures[this.data.animationProgress];
@@ -80,7 +79,7 @@ export const setPulseTempo = () => {
     done: false,
     priority: 0,
     data: {
-      animationStart: SceneManager.conductor.markers[SceneManager.conductor.currentBeat + 2] - (.025 * 22),
+      animationStart: SceneManager.conductor.markers[SceneManager.conductor.currentBeat + 2] - (.025 * 23),
       animationSpeed: .025,
       animationProgress: 0,
       pulseBarRef: SceneManager.getChildByName(ComponentNames.PulseBar, true),

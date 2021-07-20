@@ -108,7 +108,10 @@ export const RhythmBarNames = {
   RhythmBarMeterAfterImageSprite: 'RhythmBarMeterAfterImageSprite',
   RhythmBarMeterConsumptionSprite: 'RhythmBarMeterConsumptionSprite',
   RhythmBarMeterBackgroundSprite: 'RhythmBarMeterBackgroundSprite',
-  RhythmBarText: 'RhythmBarText'
+  RhythmBarText: 'RhythmBarText',
+  RhythmBarSpellQueueButton: 'RhythmBarSpellQueueButton',
+  RhythmBarSpellQueueButtonIcon: 'RhythmBarSpellQueueButtonIcon',
+  RhythmBarSpellQueueButtonCountdown: 'RhythmBarSpellQueueButtonCountdown'
 }
 
 export const GooVitalsNames = {

@@ -20,12 +20,3 @@ export const getSkillByName = (name) => {
   if (name === SkillNames.Meditate.name || name === SkillNames.Meditate.displayName) return Meditate;
   if (name === SkillNames.Shield.name || name === SkillNames.Shield.displayName) return Shield;
 };
-
-export const addSkillToQueue = (name) => {
-  const skill = getSkillByName(name);
-  if (SceneManager.data.currentRhythm < skill.rhythmCost) return;
-  if (SceneManager.data.skillQueue.length >= 2) return;
-  SceneManager.data.currentRhythm -= skill.rhythmCost;
-  SceneManager.data.skillQueue.push(name);
-  console.log(SceneManager.data.currentRhythm, SceneManager.data.skillQueue)
-}

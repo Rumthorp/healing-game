@@ -10,6 +10,7 @@ import {
 } from '../../../../static/names';
 import HealthCircle from './HealthCircle';
 import ShieldCircle from './ShieldCircle';
+import { onGooClick } from './gooUtils';
 
 export default class Goo extends ComponentClass {
   constructor(rowIndex, columnIndex) {
@@ -21,6 +22,10 @@ export default class Goo extends ComponentClass {
     const gooData = SceneManager.data.goo[rowIndex][columnIndex];
     this.interactive = true;
     this.buttonMode = true;
+    this.on('click', () => {
+      SceneManager.data.selectedGoo = this.name;
+      onGooClick(rowIndex, columnIndex);
+    });
     this.createAsset(
       'sprite', 
       {
@@ -32,6 +37,7 @@ export default class Goo extends ComponentClass {
       true,
       root.loader.resources[GooNames.GooBox].texture,
     )
+    if (rowIndex === 1 && columnIndex === 1) this.assets[GooNames.GooBox].asset.alpha = 1;
     this.createAsset(
       'component',
       new ShieldCircle(rowIndex, columnIndex, gooData.shield),
@@ -58,5 +64,6 @@ export default class Goo extends ComponentClass {
       4
     );
     this.addAsset(goo.name);
+    
   }
 };

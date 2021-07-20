@@ -7,32 +7,30 @@ import {
   ComponentNames
 } from '../../../../static/names';
 import { Constants } from '../../../../static/constants';
-import {
-  getSkillByName,
-  addSkillToQueue
-} from './skillUtils';
+import { getSkillByName } from './skillUtils';
+import { addSkillToQueue } from '../rhythmBar/rhythmBarUtils';
 
 export default class SkillButton extends ComponentClass {
   constructor(positionObj, rowIndex, columnIndex, skillDisplayName) {
     super(`${ComponentNames.SkillButton}-${rowIndex}-${columnIndex}`);
     this.interactive = true;
     this.buttonMode = true;
-    const skill = getSkillByName(skillDisplayName);
+    this.skill = getSkillByName(skillDisplayName);
     this.createAsset(
       'sprite', 
       {
-        name: skill.name,
+        name: this.skill.name,
         x: Constants.GodZoneSkillPositions[rowIndex][columnIndex].x,
         y: Constants.GodZoneSkillPositions[rowIndex][columnIndex].y,
         width: Constants.GodZoneSkillButtonWidth,
         height: Constants.GodZoneSkillButtonWidth
       },
       true,
-      root.loader.resources[skill.iconName].texture,
+      root.loader.resources[this.skill.iconName].texture,
     )
     this.on(
       'click',
-      () => addSkillToQueue(SceneManager.data.skills[rowIndex][columnIndex].name),
+      () => addSkillToQueue(this.skill),
       true
     );
   }

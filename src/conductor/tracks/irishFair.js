@@ -21,12 +21,7 @@ export default {
   onStart: (conductor) => {
     conductor.registerRecurringEvent(
       () => {
-        SceneManager.animation.registerAnimation(
-          setPulseTempo(
-            conductor,
-            root.loader.resources[PulseBarNames.PulseBarPulseSprite].spritesheet.animations.pulse
-          )
-        );
+        SceneManager.animation.registerAnimation(setPulseTempo());
       },
       () => conductor.currentBeat >= conductor.markers.length - 2,
       1
@@ -49,7 +44,7 @@ export default {
                 assetObj,
                 gooTextures,
                 .05,
-                9
+                10
               )
             );
           },

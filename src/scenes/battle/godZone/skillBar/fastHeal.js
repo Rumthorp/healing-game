@@ -6,5 +6,6 @@ export default {
   name: SkillNames.FastHeal.name,
   displayName: SkillNames.FastHeal.displayName,
   iconName: SkillNames.FastHeal.iconName,
-  rhythmCost: 10
+  rhythmCost: 10,
+  beatsToCast: 4
 };

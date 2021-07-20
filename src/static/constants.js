@@ -49,6 +49,8 @@ const GodZoneSkillPositions = (() => {
   return positions;
 })();
 const RhythmMeterMaxHeight = 183;
+const RhythmBarSpellQueueButtonSize = 85;
+const RhythmBarSpellQueueButtonPositions = [ 0, 90, 180];
 
 export const Constants = {
   AppWidth,
@@ -74,5 +76,7 @@ export const Constants = {
   GodZoneWidth,
   GodZoneSkillButtonWidth,
   GodZoneSkillPositions,
-  RhythmMeterMaxHeight
+  RhythmMeterMaxHeight,
+  RhythmBarSpellQueueButtonSize,
+  RhythmBarSpellQueueButtonPositions
 };

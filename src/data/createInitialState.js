@@ -2,7 +2,10 @@ import {
   generateInitialGooState,
   generateInitialSkillState
 } from './dataUtils';
-import { SkillNames } from '../static/names'
+import {
+  SkillNames,
+  RhythmBarNames
+} from '../static/names'
 
 export default () => {
   const initialState = {};
@@ -18,7 +21,16 @@ export default () => {
   initialState.startingRhythm = 20;
   initialState.currentRhythm = 20;
   initialState.maxRhythm = 100;
-  initialState.skillQueue = [];
-  initialState.selectedGoo = null;
+  initialState.skillQueue = {
+    queue: [],
+    hash: {}
+  };
+  for (let i = 0; i < 3; i ++) {
+    initialState.skillQueue.hash[`${RhythmBarNames.RhythmBarSpellQueueButton}-${i}`] = {
+      ref: null,
+      active: false
+    };
+  }
+  initialState.selectedGoo = 'Goo-1-1';
   return initialState;
 };

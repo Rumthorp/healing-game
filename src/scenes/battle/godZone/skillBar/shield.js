@@ -6,5 +6,6 @@ export default {
   name: SkillNames.Shield.name,
   displayName: SkillNames.Shield.displayName,
   iconName: SkillNames.Shield.iconName,
-  rhythmCost: 10
+  rhythmCost: 10,
+  beatsToCast: 4
 };

@@ -8,7 +8,7 @@ import {
   SceneNames
 } from '../static/names';
 import { Constants } from '../static/constants';
-import { getRhythmBarHeight } from './battle/godZone/rhythmBar/rhythmBarUtils';
+import { setRhythmBarState } from './battle/godZone/rhythmBar/rhythmBarUtils';
 
 export default (delta) => {
   const conductor = SceneManager.conductor;
@@ -18,12 +18,11 @@ export default (delta) => {
     if (SceneManager.tickerMetaData[ComponentNames.Conductor].active) {
       conductor.progress = conductor.music.seek();
     }
-    if (SceneManager.tickerMetaData[ComponentNames.Conductor].active && conductor.progress >= conductor.markers[conductor.currentBeat + 1]) {
+    if (SceneManager.tickerMetaData[ComponentNames.Conductor].active && conductor.progress >= conductor.markers[conductor.currentBeat]) {
       conductor.currentBeat ++;
       for (let componentName in SceneManager.tickerMetaData) {
         SceneManager.tickerMetaData[componentName].beatUpdated = false;
       }
-      console.log(conductor.markers[conductor.currentBeat])
       if (conductor.events[conductor.markers[conductor.currentBeat]]) {
         conductor.events[conductor.markers[conductor.currentBeat]].event(conductor);
       }
@@ -65,13 +64,7 @@ export default (delta) => {
       && SceneManager.data.currentRhythm !== SceneManager.data.maxRhythm
     ) {
       SceneManager.data.currentRhythm += 1;
-      let RhythmBar = SceneManager.assets[SceneNames.Battle].asset.assets[ComponentNames.GodZone].asset.assets[ComponentNames.RhythmBar].asset;
-      RhythmBar.assets[RhythmBarNames.RhythmBarMeterSprite].asset.height = getRhythmBarHeight(
-        SceneManager.data.currentRhythm,
-        SceneManager.data.maxRhythm,
-        Constants.RhythmMeterMaxHeight
-      );
-      RhythmBar.assets[RhythmBarNames.RhythmBarText].asset.text = SceneManager.data.currentRhythm;
+      setRhythmBarState();
       SceneManager.tickerMetaData[ComponentNames.RhythmBar].beatUpdated = true;
     }
 

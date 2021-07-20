@@ -36,7 +36,6 @@ export default {
         for (let gooName in goo) {
           assetObj[gooName] = goo[gooName].asset.assets[GooNames.GooSprite].asset;
         }
-        let pulseTextures = root.loader.resources[PulseBarNames.PulseBarPulseSprite].spritesheet.animations.pulse;
         conductor.registerRecurringEvent(
           () => {
             SceneManager.animation.registerAnimation(
@@ -45,7 +44,7 @@ export default {
                 assetObj,
                 gooTextures,
                 .035,
-                10,
+                8,
                 true
               )
             );
