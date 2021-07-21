@@ -8,7 +8,11 @@ import {
   SceneNames
 } from '../static/names';
 import { Constants } from '../static/constants';
-import { setRhythmBarState } from './battle/godZone/rhythmBar/rhythmBarUtils';
+import {
+  setCastProgressState,
+  castSkillFromQueue,
+  setRhythmBarState
+} from './battle/godZone/rhythmBar/rhythmBarUtils';
 
 export default (delta) => {
   const conductor = SceneManager.conductor;
@@ -63,8 +67,17 @@ export default (delta) => {
       && conductor.currentBeat > 2
       && SceneManager.data.currentRhythm !== SceneManager.data.maxRhythm
     ) {
-      SceneManager.data.currentRhythm += 1;
-      setRhythmBarState();
+      if (SceneManager.data.skillQueue.queue.length === 0){
+        SceneManager.data.currentRhythm += 1;
+        setRhythmBarState();
+      }
+      if (SceneManager.data.skillQueue.queue.length > 0 && SceneManager.data.skillQueue.queue[0].castProgress >= 1) {
+        SceneManager.data.skillQueue.queue[0].castProgress -= 1;
+        setCastProgressState();
+      } 
+      if (SceneManager.data.skillQueue.queue.length > 0 && SceneManager.data.skillQueue.queue[0].castProgress < 1) {
+        castSkillFromQueue();
+      }
       SceneManager.tickerMetaData[ComponentNames.RhythmBar].beatUpdated = true;
     }
 

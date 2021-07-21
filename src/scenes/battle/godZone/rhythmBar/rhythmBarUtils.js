@@ -10,7 +10,10 @@ import {
 import { Constants } from '../../../../static/constants';
 
 export const setRhythmBarState = () => {
-  const RhythmBar = SceneManager.assets[SceneNames.Battle].asset.assets[ComponentNames.GodZone].asset.assets[ComponentNames.RhythmBar].asset;
+  const RhythmBar = SceneManager.assets
+  [SceneNames.Battle].asset.assets
+  [ComponentNames.GodZone].asset.assets
+  [ComponentNames.RhythmBar].asset;
   RhythmBar.assets[RhythmBarNames.RhythmBarMeterSprite].asset.height = (SceneManager.data.currentRhythm / SceneManager.data.maxRhythm) * Constants.RhythmMeterMaxHeight;
   RhythmBar.assets[RhythmBarNames.RhythmBarText].asset.text = SceneManager.data.currentRhythm;
 };
@@ -63,8 +66,27 @@ export const cancelSkillFromQueue = (spellQueueButtonName) => {
   setRhythmBarState();
 };
 
-export const castSkillFromQueue = () => {
+export const setCastProgressState = () => {
+  const asset = SceneManager.assets
+  [SceneNames.Battle].asset.assets
+  [ComponentNames.GodZone].asset.assets
+  [ComponentNames.RhythmBar].asset.assets
+  [SceneManager.data.skillQueue.queue[0].spellQueueButtonName].asset;
+  asset.assets[RhythmBarNames.RhythmBarSpellQueueButtonCountdown].asset.text = SceneManager.data.skillQueue.queue[0].castProgress;
+};
 
+export const castSkillFromQueue = () => {
+  const asset = SceneManager.assets
+  [SceneNames.Battle].asset.assets
+  [ComponentNames.GodZone].asset.assets
+  [ComponentNames.RhythmBar].asset.assets
+  [SceneManager.data.skillQueue.queue[0].spellQueueButtonName].asset;
+  asset.alpha = 0;
+  asset.interactive = false;
+  asset.buttonMode = false;
+  SceneManager.data.skillQueue.hash[SceneManager.data.skillQueue.queue[0].spellQueueButtonName].active = false;
+  SceneManager.data.skillQueue.queue.splice(0, 1);
+  orderSkillQueue();
 };
 
 const orderSkillQueue = () => {
@@ -75,7 +97,7 @@ const orderSkillQueue = () => {
       [ComponentNames.GodZone].asset.assets
       [ComponentNames.RhythmBar].asset.assets
       [queueData.spellQueueButtonName].asset;
-      SceneManager.data.skillQueue.hash[queueData.spellQueueButtonName].lastIndex = index;
+      SceneManager.data.skillQueue.hash[queueData.spellQueueButtonName].active = false;
       asset.y = Constants.RhythmBarSpellQueueButtonPositions[index];
     }
   });
